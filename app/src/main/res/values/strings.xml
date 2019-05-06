@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">VkApp</string>
+    <string name="splash">Splash</string>
+    <string name="profile_view">Profile View</string>
+    <string name="profile_edit">Profile Edit</string>
+    <string name="logout">Logout</string>
+</resources>
