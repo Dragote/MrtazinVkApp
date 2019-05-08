@@ -1,11 +1,124 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-              android:orientation="vertical"
-              android:layout_width="match_parent"
-              android:layout_height="match_parent">
+<androidx.coordinatorlayout.widget.CoordinatorLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
 
-    <Button
-            android:text="EDIT_GOTOBACK"
+
+    <com.google.android.material.appbar.AppBarLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content" android:id="@+id/button"/>
-</LinearLayout>
+            android:layout_height="wrap_content">
+
+        <androidx.appcompat.widget.Toolbar
+                android:id="@+id/profileEditToolbar"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/colorPrimary"
+                app:title="@string/profile_edit"
+                app:titleTextColor="@color/white"/>
+
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <androidx.core.widget.NestedScrollView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+        <LinearLayout android:layout_width="match_parent"
+                      android:layout_height="wrap_content"
+                      android:orientation="vertical"
+                      android:background="@color/gray">
+
+            <LinearLayout style="@style/profileView_infoLinearLayout">
+
+                <TextView style="@style/profileView_infoSecondaryText"
+                          android:text="Имя"
+                          android:id="@+id/profileEdit_firstNameLabel"/>
+
+                <EditText
+                        android:id="@+id/profileEdit_firstNameEdit"
+                        android:layout_width="match_parent"
+                          android:layout_height="wrap_content"/>
+
+            </LinearLayout>
+
+            <LinearLayout style="@style/profileView_infoLinearLayout">
+
+                <TextView style="@style/profileView_infoSecondaryText"
+                          android:text="Фамилия"
+                          android:id="@+id/profileEdit_lastNameLabel"/>
+
+                <EditText android:id="@+id/profileEdit_lastNameEdit"
+                          android:layout_width="match_parent"
+                          android:layout_height="wrap_content"/>
+            </LinearLayout>
+
+            <LinearLayout style="@style/profileView_infoLinearLayout">
+
+                <TextView style="@style/profileView_infoSecondaryText"
+                          android:text="Статус"
+                          android:id="@+id/profileEdit_statusLabel"/>
+                <EditText android:id="@+id/profileEdit_statusEdit"
+                          android:layout_width="match_parent"
+                          android:layout_height="wrap_content"/>
+            </LinearLayout>
+
+            <LinearLayout style="@style/profileView_infoLinearLayout">
+
+                <TextView style="@style/profileView_infoSecondaryText"
+                          android:text="День рождения"
+                          android:id="@+id/profileView_birthdayLabel"/>
+                <EditText android:id="@+id/profileEdit_birthdayEdit"
+                          android:layout_width="match_parent"
+                          android:layout_height="wrap_content"/>
+
+            </LinearLayout>
+
+            <LinearLayout style="@style/profileView_infoLinearLayout">
+
+                <TextView style="@style/profileView_infoSecondaryText"
+                          android:text="Пол"
+                          android:id="@+id/profileView_sexLabel"/>
+                <EditText android:id="@+id/profileEdit_sexEdit"
+                          android:layout_width="match_parent"
+                          android:layout_height="wrap_content"/>
+
+
+            </LinearLayout>
+
+            <LinearLayout style="@style/profileView_infoLinearLayout">
+
+                <TextView style="@style/profileView_infoSecondaryText"
+                          android:text="Город"
+                          android:id="@+id/profileView_cityLabel"/>
+                <EditText android:id="@+id/profileEdit_cityEdit"
+                          android:layout_width="match_parent"
+                          android:layout_height="wrap_content"/>
+
+
+            </LinearLayout>
+
+            <LinearLayout style="@style/profileView_infoLinearLayout">
+
+                <TextView style="@style/profileView_infoSecondaryText"
+                          android:text="Страна"
+                          android:id="@+id/profileView_countryLabel"/>
+                <EditText android:id="@+id/profileEdit_countyEdit"
+                          android:layout_width="match_parent"
+                          android:layout_height="wrap_content"/>
+
+            </LinearLayout>
+
+            <LinearLayout style="@style/profileView_infoLinearLayout">
+
+                <TextView style="@style/profileView_infoSecondaryText"
+                          android:text="Вуз: "
+                          android:id="@+id/profileView_educationLabel"/>
+                <EditText android:id="@+id/profileEdit_educationEdit"
+                          android:layout_width="match_parent"
+                          android:layout_height="wrap_content"/>
+            </LinearLayout>
+        </LinearLayout>
+    </androidx.core.widget.NestedScrollView>
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

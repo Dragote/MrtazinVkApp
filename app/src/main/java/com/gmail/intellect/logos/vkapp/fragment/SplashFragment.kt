@@ -14,7 +14,7 @@ class SplashFragment : BaseFragment(R.layout.frament_splash) {
 
 
         Handler().postDelayed({
-            App.INCTANCE.router.replaceScreen(Screen.ProfileViewScreen())
+            App.INCTANCE.router.replaceScreen(Screen.LogInScreen())
         }, 3000)
     }
 

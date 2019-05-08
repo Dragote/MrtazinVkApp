@@ -1,4 +1,4 @@
-package com.gmail.intellect.logos.vkapp.fragment.profile
+package com.gmail.intellect.logos.vkapp.fragment.profileView
 
 class PostMessage(
     id: Int,

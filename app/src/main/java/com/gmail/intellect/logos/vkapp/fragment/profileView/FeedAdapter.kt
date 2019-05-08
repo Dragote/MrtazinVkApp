@@ -1,4 +1,4 @@
-package com.gmail.intellect.logos.vkapp.fragment.profile
+package com.gmail.intellect.logos.vkapp.fragment.profileView
 
 import android.view.LayoutInflater
 import android.view.View
@@ -8,9 +8,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.gmail.intellect.logos.vkapp.R
 import com.gmail.intellect.logos.vkapp.common.loadImage
 import kotlinx.android.synthetic.main.item_post_message.view.*
-import java.lang.ClassCastException
 import java.lang.IllegalArgumentException
-import java.lang.RuntimeException
 
 class FeedAdapter : RecyclerView.Adapter<RecyclerView.ViewHolder>() {
     companion object {
@@ -37,7 +35,7 @@ class FeedAdapter : RecyclerView.Adapter<RecyclerView.ViewHolder>() {
             )
         )
 
-        else -> throw IllegalArgumentException("viewType $viewType not found")
+        else -> throw IllegalArgumentException("viewType $viewType not found") as Throwable
     }
 
     override fun getItemViewType(position: Int): Int = when (items[position]) {

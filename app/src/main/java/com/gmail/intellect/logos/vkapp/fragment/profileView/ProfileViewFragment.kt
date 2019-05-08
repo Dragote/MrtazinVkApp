@@ -1,20 +1,18 @@
-package com.gmail.intellect.logos.vkapp.fragment.profile
+package com.gmail.intellect.logos.vkapp.fragment.profileView
 
+import android.annotation.SuppressLint
 import android.os.Bundle
-import android.view.LayoutInflater
 import android.view.View
-import androidx.fragment.app.FragmentTransaction
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.arellomobile.mvp.presenter.InjectPresenter
-import com.gmail.intellect.logos.vkapp.App
 import com.gmail.intellect.logos.vkapp.R
 import com.gmail.intellect.logos.vkapp.fragment.BaseFragment
-import com.gmail.intellect.logos.vkapp.fragment.ProfileEditFragment
-import com.gmail.intellect.logos.vkapp.navigation.Screen
 import kotlinx.android.synthetic.main.fragment_profile_view.*
 
 
-class ProfileViewFragment : BaseFragment(R.layout.fragment_profile_view), ProfileView {
+class ProfileViewFragment : BaseFragment(R.layout.fragment_profile_view),
+    ProfileView {
+
 
     @InjectPresenter
     lateinit var presenter: ProfileViewPresenter
@@ -26,6 +24,7 @@ class ProfileViewFragment : BaseFragment(R.layout.fragment_profile_view), Profil
         super.onViewCreated(view, savedInstanceState)
         initToolbar()
         initFeed()
+        initBtns()
     }
 
     private fun initFeed() {
@@ -35,33 +34,46 @@ class ProfileViewFragment : BaseFragment(R.layout.fragment_profile_view), Profil
         profileViewFeed.adapter = feedAdapter
     }
 
-    override fun showProfile(firstName: String) {
-        profileViewFirstName.text = firstName
-//        TODO("Create all parameters")
+    @SuppressLint("SetTextI18n")
+    override fun showProfile(
+        firstName: String,
+        lastName: String,
+        status: String,
+        birthday: String,
+        sex: String,
+        city: String,
+        country: String,
+        education: String
+    ) {
+        profileView_name.text = "$firstName $lastName"
+        profileView_status.text = status
+        profileView_birthday.text = birthday
+        profileView_sex.text = sex
+        profileView_city.text = city
+        profileView_country.text = country
+        profileView_education.text = education
     }
 
     override fun showFeed(items: List<BaseMessage>) {
         feedAdapter.setItems(items)
     }
 
+    private fun initBtns() {
+        profileView_editProfileBtn.setOnClickListener {
+            presenter.edit()
+        }
+    }
 
     private fun initToolbar() {
         profileViewToolbar.inflateMenu(R.menu.menu_profile_view)
         profileViewToolbar.setOnMenuItemClickListener {
             when (it.itemId) {
-                R.id.action_profile_edit -> {
-//                    fTODO("Navigate to profile edit")
-
-                    activity!!.supportFragmentManager.beginTransaction().replace(R.id.container, ProfileEditFragment())
-                        .addToBackStack(ProfileEditFragment().toString())
-                        .setTransition(FragmentTransaction.TRANSIT_FRAGMENT_OPEN)
-                        .commit()
-                }
-
                 R.id.action_logout -> presenter.logout()
             }
 
             true
         }
     }
+
+
 }
