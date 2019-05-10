@@ -7,5 +7,4 @@
         android:icon="@drawable/ic_exit_to_app"
         android:title="@string/logout"
         app:showAsAction="always" />
-
 </menu>

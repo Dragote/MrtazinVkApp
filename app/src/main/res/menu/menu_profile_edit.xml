@@ -6,12 +6,9 @@
         android:icon="@drawable/ic_save_edit"
         android:title="@string/logout"
         app:showAsAction="always" />
-
     <item
             android:id="@+id/action_cancel_edit"
             android:icon="@drawable/ic_cancel_edit"
             android:title="@string/logout"
             app:showAsAction="always" />
-
-
 </menu>
