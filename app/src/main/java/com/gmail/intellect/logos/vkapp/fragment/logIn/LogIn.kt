@@ -7,5 +7,7 @@ import com.arellomobile.mvp.viewstate.strategy.StateStrategyType
 
 @StateStrategyType(AddToEndSingleStrategy::class)
 interface LogIn : MvpView {
-    fun showLogInScreen(login : String, password : String)
+    fun initLogInScreen(login : String, password : String)
+    fun showLogInError()
+    fun showNetworkError()
 }

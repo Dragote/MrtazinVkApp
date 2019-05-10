@@ -14,13 +14,12 @@ import com.gmail.intellect.logos.vkapp.R
 import com.gmail.intellect.logos.vkapp.fragment.BaseFragment
 import com.gmail.intellect.logos.vkapp.fragment.profileView.feed.BaseMessage
 import com.gmail.intellect.logos.vkapp.fragment.profileView.feed.FeedAdapter
+import com.gmail.intellect.logos.vkapp.moxy.Repository
 import com.google.android.material.snackbar.Snackbar
 import kotlinx.android.synthetic.main.fragment_profile_view.*
 import kotlinx.android.synthetic.main.item_post_message.*
 
 class ProfileViewFragment : BaseFragment(R.layout.fragment_profile_view), ProfileView {
-
-
 
     @InjectPresenter
     internal lateinit var presenter: ProfileViewPresenter
@@ -51,23 +50,14 @@ class ProfileViewFragment : BaseFragment(R.layout.fragment_profile_view), Profil
     }
 
     @SuppressLint("SetTextI18n")
-    override fun showProfile(
-        firstName: String,
-        lastName: String,
-        status: String,
-        birthday: String,
-        sex: String,
-        city: String,
-        country: String,
-        education: String
-    ) {
-        profileView_name.text = "$firstName $lastName"
-        profileView_status.text = status
-        profileView_birthday.text = birthday
-        profileView_sex.text = sex
-        profileView_city.text = city
-        profileView_country.text = country
-        profileView_education.text = education
+    override fun showProfile(repository: Repository) {
+        profileView_name.text = "${repository.firstName} ${repository.lastName}"
+        profileView_status.text = repository.status
+        profileView_birthday.text = repository.birthday
+        profileView_sex.text = repository.sex
+        profileView_city.text = repository.city
+        profileView_country.text = repository.country
+        profileView_education.text = repository.education
     }
 
     private fun initBtns() {
@@ -85,10 +75,8 @@ class ProfileViewFragment : BaseFragment(R.layout.fragment_profile_view), Profil
             true
         }
     }
-
-
-
-
-
+    override fun showNetworkError() {
+        TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
+    }
 
 }

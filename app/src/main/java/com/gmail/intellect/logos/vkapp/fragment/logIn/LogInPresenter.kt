@@ -10,7 +10,7 @@ class LogInPresenter : MvpPresenter<LogIn>() {
 
     override fun onFirstViewAttach() {
         super.onFirstViewAttach()
-        viewState.showLogInScreen("default login", "default password")
+        viewState.initLogInScreen("default login", "default password")
     }
 
     fun logIn(){

@@ -10,13 +10,13 @@ import com.arellomobile.mvp.presenter.ProvidePresenter
 import com.gmail.intellect.logos.vkapp.R
 import com.gmail.intellect.logos.vkapp.fragment.BaseFragment
 import com.gmail.intellect.logos.vkapp.fragment.profileView.ProfileViewPresenter
+import com.gmail.intellect.logos.vkapp.moxy.Repository
 import com.google.android.material.snackbar.Snackbar
 import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.android.synthetic.main.fragment_profile_edit.*
 import kotlinx.android.synthetic.main.fragment_profile_view.*
 
 class ProfileEditFragment : BaseFragment(R.layout.fragment_profile_edit),ProfileEdit {
-
 
     @InjectPresenter
     internal lateinit var presenter: ProfileEditPresenter
@@ -31,22 +31,15 @@ class ProfileEditFragment : BaseFragment(R.layout.fragment_profile_edit),Profile
         initToolBar()
     }
 
-    override fun showProfileInfo(  firstName: String,
-                                   lastName: String,
-                                   status: String,
-                                   birthday: String,
-                                   sex: String,
-                                   city: String,
-                                   country: String,
-                                   education: String) {
-        profileEdit_firstNameEdit.text = firstName.toEditable()
-        profileEdit_lastNameEdit.text = lastName.toEditable()
-        profileEdit_statusEdit.text = status.toEditable()
-        profileEdit_birthdayEdit.text = birthday.toEditable()
-        profileEdit_sexEdit.text = sex.toEditable()
-        profileEdit_cityEdit.text = city.toEditable()
-        profileEdit_countyEdit.text = country.toEditable()
-        profileEdit_educationEdit.text = education.toEditable()
+    override fun showProfileInfo( repository : Repository) {
+        profileEdit_firstNameEdit.text = repository.firstName.toEditable()
+        profileEdit_lastNameEdit.text = repository.lastName.toEditable()
+        profileEdit_statusEdit.text = repository.status.toEditable()
+        profileEdit_birthdayEdit.text = repository.birthday.toEditable()
+        profileEdit_sexEdit.text = repository.sex.toEditable()
+        profileEdit_cityEdit.text = repository.city.toEditable()
+        profileEdit_countyEdit.text = repository.country.toEditable()
+        profileEdit_educationEdit.text = repository.education.toEditable()
     }
 
     private fun initToolBar(){
@@ -78,6 +71,10 @@ class ProfileEditFragment : BaseFragment(R.layout.fragment_profile_edit),Profile
             }
             true
         }
+    }
+
+    override fun showNetworkError() {
+        TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
     }
 
     private fun String.toEditable(): Editable = Editable.Factory.getInstance().newEditable(this)

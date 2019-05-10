@@ -4,6 +4,7 @@ import com.arellomobile.mvp.InjectViewState
 import com.arellomobile.mvp.MvpPresenter
 import com.gmail.intellect.logos.vkapp.App
 import com.gmail.intellect.logos.vkapp.fragment.profileView.feed.PostMessage
+import com.gmail.intellect.logos.vkapp.moxy.Repository
 import com.gmail.intellect.logos.vkapp.moxy.Repository.birthday
 import com.gmail.intellect.logos.vkapp.moxy.Repository.city
 import com.gmail.intellect.logos.vkapp.moxy.Repository.country
@@ -21,7 +22,7 @@ class ProfileViewPresenter : MvpPresenter<ProfileView>() {
     override fun onFirstViewAttach() {
         super.onFirstViewAttach()
 
-        viewState.showProfile(firstName, lastName, status, birthday, sex, city, country, education)
+        viewState.showProfile(Repository)
 
         viewState.showFeed(
             listOf(

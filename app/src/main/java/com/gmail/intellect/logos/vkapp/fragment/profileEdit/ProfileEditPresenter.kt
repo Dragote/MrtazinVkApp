@@ -26,7 +26,7 @@ class ProfileEditPresenter : MvpPresenter<ProfileEdit>() {
     override fun onFirstViewAttach() {
         super.onFirstViewAttach()
 
-        viewState.showProfileInfo(firstName, lastName, status, birthday, sex, city, country, education)
+        viewState.showProfileInfo(Repository)
     }
 
     fun cancelEdit() {

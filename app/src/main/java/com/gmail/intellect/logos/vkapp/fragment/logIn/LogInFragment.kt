@@ -34,10 +34,19 @@ class LogInFragment : BaseFragment(R.layout.fragment_log_in), LogIn {
         }
     }
 
-    override fun showLogInScreen(login: String, password: String) {
+    override fun initLogInScreen(login: String, password: String) {
         logIn_loginEdit.text = login.toEditable()
         logIn_passwordEdit.text = password.toEditable()
     }
+
+    override fun showLogInError() {
+        TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
+    }
+
+    override fun showNetworkError() {
+        TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
+    }
+
 
     private fun String.toEditable(): Editable = Editable.Factory.getInstance().newEditable(this)
 }

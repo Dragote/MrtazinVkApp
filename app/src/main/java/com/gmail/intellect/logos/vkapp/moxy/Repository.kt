@@ -3,7 +3,7 @@ package com.gmail.intellect.logos.vkapp.moxy
 object Repository {
     var firstName: String = "Эмиль"
     var lastName: String = "Муртазин"
-    var status: String = "Vallar Morhulis"
+    var status: String = "Vallar Morghulis"
     var birthday: String = "14.07.98"
     var sex: String = "Мужской"
     var city: String = "Томск"
