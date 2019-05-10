@@ -1,8 +1,22 @@
 <resources>
     <string name="app_name">VkApp</string>
     <string name="splash">Splash</string>
-    <string name="profile_view">Profile View</string>
-    <string name="profile_edit">Profile Edit</string>
+    <string name="profile_view">My Profile</string>
+    <string name="profile_edit">Edit Profile</string>
     <string name="logout">Logout</string>
     <string name="spaceString">\u0020</string>
+    <string name="logIn_login">Login</string>
+    <string name="logIn_password">Password</string>
+    <string name="logIn_logInBtn">Log In</string>
+    <string name="profile_EditProfile">Edit Profile</string>
+    <string name="profile_birthday">Birthday</string>
+    <string name="profile_sex">Sex</string>
+    <string name="profile_city">City</string>
+    <string name="profile_country">Country</string>
+    <string name="profile_education">Education</string>
+    <string name="profile_feed">Posts</string>
+    <string name="profile_firstName">First Name</string>
+    <string name="profile_lastName">Last Name</string>
+    <string name="profile_status">Status</string>
+    <string name="save_done">Saved Successfully</string>
 </resources>

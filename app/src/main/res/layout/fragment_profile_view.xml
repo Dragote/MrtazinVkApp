@@ -3,7 +3,8 @@
         xmlns:android="http://schemas.android.com/apk/res/android"
         xmlns:app="http://schemas.android.com/apk/res-auto"
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        android:id="@+id/fragment_profileView">
 
     <com.google.android.material.appbar.AppBarLayout
             android:layout_width="match_parent"
@@ -39,15 +40,16 @@
                         android:layout_width="match_parent"
                         android:layout_height="300dp"
                         android:scaleType="centerCrop"
-                        app:srcCompat="@drawable/base_photo"
-                        android:id="@+id/profileView_avatar"
-                />
+                        app:srcCompat="@raw/base_photo"
+                        android:id="@+id/profileView_avatar"/>
+
                 <LinearLayout android:layout_width="match_parent"
                               android:layout_height="wrap_content"
                               android:orientation="vertical"
                               android:layout_alignParentBottom="true"
                               android:paddingBottom="8dp"
-                              android:paddingStart="8dp">
+                              android:paddingStart="8dp"
+                              android:paddingEnd="8dp">
                     <LinearLayout
                             android:orientation="horizontal"
                             android:layout_width="match_parent"
@@ -58,7 +60,6 @@
                                 android:textColor="@color/white"
                                 android:textSize="24sp"
                                 android:layout_height="wrap_content"/>
-
 
                     </LinearLayout>
                     <TextView
@@ -73,86 +74,107 @@
 
             </RelativeLayout>
 
+            <LinearLayout style="@style/profileView_infoLinearLayout"
+                          android:paddingEnd="8dp"
+                          android:paddingStart="8dp">
 
-            <Button style="@style/defaultBtn"
-                    android:id="@+id/profileView_editProfileBtn"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="Редактировать профиль"/>
+                <Button style="@style/defaultBtn"
+                        android:id="@+id/profileView_editProfileBtn"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="@string/profile_EditProfile"/>
 
-            <LinearLayout android:layout_width="match_parent"
-                          android:layout_height="wrap_content"
-                          android:orientation="vertical"
-                          android:background="@color/gray">
 
                 <LinearLayout style="@style/profileView_infoLinearLayout">
 
                     <TextView style="@style/profileView_infoSecondaryText"
-                              android:text="День рождения"
+                              android:text="@string/profile_birthday"
                               android:id="@+id/profileView_birthdayLabel"/>
 
                     <TextView style="@style/profileView_infoPrimaryText"
                               android:id="@+id/profileView_birthday"/>
+                    <View style="@style/grayLine"/>
+
                 </LinearLayout>
 
                 <LinearLayout style="@style/profileView_infoLinearLayout">
 
                     <TextView style="@style/profileView_infoSecondaryText"
-                              android:text="Пол"
+                              android:text="@string/profile_sex"
                               android:id="@+id/profileView_sexLabel"/>
 
                     <TextView style="@style/profileView_infoPrimaryText"
                               android:id="@+id/profileView_sex"/>
+                    <View style="@style/grayLine"/>
 
                 </LinearLayout>
 
                 <LinearLayout style="@style/profileView_infoLinearLayout">
 
                     <TextView style="@style/profileView_infoSecondaryText"
-                              android:text="Город"
+                              android:text="@string/profile_city"
                               android:id="@+id/profileView_cityLabel"/>
 
                     <TextView style="@style/profileView_infoPrimaryText"
                               android:id="@+id/profileView_city"/>
+                    <View style="@style/grayLine"/>
 
                 </LinearLayout>
 
                 <LinearLayout style="@style/profileView_infoLinearLayout">
 
                     <TextView style="@style/profileView_infoSecondaryText"
-                              android:text="Страна"
+                              android:text="@string/profile_country"
                               android:id="@+id/profileView_countryLabel"/>
 
                     <TextView style="@style/profileView_infoPrimaryText"
                               android:id="@+id/profileView_country"/>
+                    <View style="@style/grayLine"/>
 
                 </LinearLayout>
 
                 <LinearLayout style="@style/profileView_infoLinearLayout">
 
                     <TextView style="@style/profileView_infoSecondaryText"
-                              android:text="Вуз: "
+                              android:text="@string/profile_education"
                               android:id="@+id/profileView_educationLabel"/>
 
                     <TextView style="@style/profileView_infoPrimaryText"
-                              android:id="@+id/profileView_education"/>
+                              android:id="@+id/profileView_education"
+                              android:layout_marginBottom="8dp"/>
+
 
                 </LinearLayout>
+
+                <View style="@style/grayLine" android:layout_marginBottom="2dp"/>
+                <View style="@style/grayLine"/>
+
+                <LinearLayout android:layout_width="wrap_content"
+                              android:layout_height="wrap_content"
+                              android:orientation="vertical"
+                              android:layout_marginTop="8dp"
+                              android:layout_marginBottom="8dp">
+
+                    <TextView
+                            android:text="@string/profile_feed"
+                            android:textSize="18sp"
+                            android:textAlignment="center"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textColor="@color/colorAccent"
+                            android:id="@+id/profileView_feed"/>
+
+                    <View android:layout_width="match_parent"
+                          android:layout_height="2dp"
+                          android:background="@color/colorAccent"/>
+                </LinearLayout>
+                <androidx.recyclerview.widget.RecyclerView
+                        android:id="@+id/profileViewFeed"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"/>
+
+
             </LinearLayout>
-
-            <TextView
-                    android:text="Стена"
-                    android:textSize="24sp"
-                    android:textAlignment="center"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:id="@+id/profileView_feed"/>
-
-            <androidx.recyclerview.widget.RecyclerView
-                    android:id="@+id/profileViewFeed"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"/>
-
         </LinearLayout>
     </androidx.core.widget.NestedScrollView>
 </androidx.coordinatorlayout.widget.CoordinatorLayout>

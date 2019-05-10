@@ -1,0 +1,22 @@
+<resources>
+    <string name="app_name">VkApp</string>
+    <string name="splash">Splash</string>
+    <string name="profile_view">Моя страница</string>
+    <string name="profile_edit">Редактировать профиль</string>
+    <string name="logout">Выйти</string>
+    <string name="spaceString">\u0020</string>
+    <string name="logIn_login">Логин</string>
+    <string name="logIn_password">Пароль</string>
+    <string name="logIn_logInBtn">Вход</string>
+    <string name="profile_EditProfile">Редактировать профиль</string>
+    <string name="profile_birthday">День рождения</string>
+    <string name="profile_sex">Пол</string>
+    <string name="profile_city">Город</string>
+    <string name="profile_country">Страна</string>
+    <string name="profile_education">Образование</string>
+    <string name="profile_feed">Записи</string>
+    <string name="profile_firstName">Имя</string>
+    <string name="profile_lastName">Фамилия</string>
+    <string name="profile_status">Статус</string>
+    <string name="save_done">Изменения успешно сохранены</string>
+</resources>

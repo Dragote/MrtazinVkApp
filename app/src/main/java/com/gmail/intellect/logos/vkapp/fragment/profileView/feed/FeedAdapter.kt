@@ -1,9 +1,8 @@
-package com.gmail.intellect.logos.vkapp.fragment.profileView
+package com.gmail.intellect.logos.vkapp.fragment.profileView.feed
 
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.ImageView
 import androidx.recyclerview.widget.RecyclerView
 import com.gmail.intellect.logos.vkapp.R
 import com.gmail.intellect.logos.vkapp.common.loadImage
@@ -13,7 +12,6 @@ import java.lang.IllegalArgumentException
 class FeedAdapter : RecyclerView.Adapter<RecyclerView.ViewHolder>() {
     companion object {
         const val POST_MESSAGE = 1
-        const val CAT_MESSAGE = 2
     }
 
     private val items: MutableList<BaseMessage> = mutableListOf()
@@ -27,20 +25,11 @@ class FeedAdapter : RecyclerView.Adapter<RecyclerView.ViewHolder>() {
             )
         )
 
-        CAT_MESSAGE -> CatHolder(
-            LayoutInflater.from(parent.context).inflate(
-                R.layout.item_cat_message,
-                parent,
-                false
-            )
-        )
-
-        else -> throw IllegalArgumentException("viewType $viewType not found") as Throwable
+        else -> throw IllegalArgumentException("viewType $viewType not found")
     }
 
     override fun getItemViewType(position: Int): Int = when (items[position]) {
         is PostMessage -> POST_MESSAGE
-        is CatMessage -> CAT_MESSAGE
         else -> throw IllegalArgumentException("${items[position].javaClass} not found")
     }
 
@@ -49,7 +38,6 @@ class FeedAdapter : RecyclerView.Adapter<RecyclerView.ViewHolder>() {
     override fun onBindViewHolder(holder: RecyclerView.ViewHolder, position: Int) {
         when (holder) {
             is PostMessageHolder -> holder.bind(items[position] as PostMessage)
-            is CatHolder -> holder.bind(items[position] as CatMessage)
         }
     }
 
@@ -62,17 +50,33 @@ class FeedAdapter : RecyclerView.Adapter<RecyclerView.ViewHolder>() {
 
     inner class PostMessageHolder(view: View) : RecyclerView.ViewHolder(view) {
         fun bind(data: PostMessage) {
-            itemView.itemPostMessage.text = data.message
+
+            itemView.item_profileName.text = data.profileName
+            itemView.item_postDate.text = data.date
+            itemView.item_likes.text = data.likes.toString()
+
+            if(data.message.isNotEmpty()) {
+                itemView.itemPostMessage.text = data.message
+                itemView.itemPostMessage.visibility = View.VISIBLE
+            }
 
             if (data.image.isNotEmpty()) {
                 itemView.itemPostImage.loadImage(data.image)
+                itemView.itemPostImage.visibility = View.VISIBLE
             }
-        }
-    }
 
-    inner class CatHolder(view: View) : RecyclerView.ViewHolder(view) {
-        fun bind(data: CatMessage) {
-            (itemView as ImageView).loadImage(data.image)
+            if (data.musicAuthor.isNotEmpty() && data.musicSongName.isNotEmpty()) {
+                itemView.itemPostMusic.visibility = View.VISIBLE
+                itemView.item_musicAudioAuthor.text = data.musicAuthor
+                itemView.item_musicAudioName.text = data.musicSongName
+            }
+           if (data.video.isNotEmpty()) {
+               itemView.item_video.visibility = View.VISIBLE
+
+           }
+
         }
+
     }
 }
+

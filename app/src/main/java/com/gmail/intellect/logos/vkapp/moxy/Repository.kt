@@ -1,26 +1,15 @@
 package com.gmail.intellect.logos.vkapp.moxy
 
 object Repository {
-    var firstName: String = ""
-    var lastName: String = ""
-    var status: String = ""
-    var birthday: String = ""
-    var sex: String = ""
-    var city: String = ""
-    var country: String = ""
-    var education: String = ""
+    var firstName: String = "Эмиль"
+    var lastName: String = "Муртазин"
+    var status: String = "Vallar Morhulis"
+    var birthday: String = "14.07.98"
+    var sex: String = "Мужской"
+    var city: String = "Томск"
+    var country: String = "Россия"
+    var education: String = "ТПУ Инженерная школа информационных технологий и робототехники (бывш. Институт кибернетики)"
 
-    fun initRepository() {
-        firstName = "Эмиль"
-        lastName = "Муртазин"
-        status = "Vallar Morhulis"
-        birthday = "14.07.98"
-        sex = "Мужской"
-        city = "Томск"
-        country = "Россия"
-        education = "ТПУ Инженерная школа информационных технологий и робототехники (бывш. Институт кибернетики)"
-
-    }
 
     fun setData(
         firstName: String,

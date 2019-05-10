@@ -6,7 +6,6 @@ import com.gmail.intellect.logos.vkapp.moxy.Repository
 import com.gmail.intellect.logos.vkapp.navigation.Navigator
 import com.gmail.intellect.logos.vkapp.navigation.Screen
 import ru.terrakok.cicerone.android.support.SupportAppNavigator
-import java.util.*
 
 class MainActivity : AppCompatActivity() {
 
@@ -17,9 +16,7 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
 
         navigator = Navigator(this, supportFragmentManager, R.id.content)
-        App.INCTANCE.router.newRootScreen(Screen.SplashScreen())
-        Repository.initRepository()
-        
+        App.INCTANCE.router.newRootScreen(Screen.LogInScreen())
     }
 
     override fun onResume() {
@@ -31,4 +28,5 @@ class MainActivity : AppCompatActivity() {
         super.onPause()
         App.INCTANCE.navigatorHolder.removeNavigator()
     }
+
 }

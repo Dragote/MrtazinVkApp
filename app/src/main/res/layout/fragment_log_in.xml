@@ -6,17 +6,20 @@
 
 
     <TextView
-            android:text="Login"
+            android:text="@string/logIn_login"
             android:layout_width="83dp"
             android:layout_height="16dp"
             android:id="@+id/logIn_loginText"
             app:layout_constraintStart_toStartOf="parent"
             android:layout_marginStart="8dp"
             app:layout_constraintEnd_toEndOf="@+id/logIn_loginEdit"
-            android:layout_marginEnd="8dp" app:layout_constraintHorizontal_bias="0.427"
+            android:layout_marginEnd="8dp"
+            app:layout_constraintHorizontal_bias="0.427"
             android:layout_marginBottom="8dp"
-            app:layout_constraintBottom_toBottomOf="parent" android:layout_marginTop="8dp"
-            app:layout_constraintTop_toBottomOf="@+id/imageView" app:layout_constraintVertical_bias="0.163"/>
+            app:layout_constraintBottom_toBottomOf="parent"
+            android:layout_marginTop="8dp"
+            app:layout_constraintTop_toBottomOf="@+id/imageView"
+            app:layout_constraintVertical_bias="0.163"/>
     <EditText
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -25,34 +28,41 @@
             android:ems="10"
             android:id="@+id/logIn_loginEdit"
             android:layout_marginEnd="8dp"
-            app:layout_constraintEnd_toEndOf="parent" android:layout_marginStart="8dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginStart="8dp"
             app:layout_constraintStart_toStartOf="parent"
-            android:layout_marginTop="8dp" app:layout_constraintTop_toBottomOf="@+id/logIn_loginText"
+            android:layout_marginTop="8dp"
+            app:layout_constraintTop_toBottomOf="@+id/logIn_loginText"
     />
     <TextView
-            android:text="Password"
-            android:layout_width="69dp"
-            android:layout_height="15dp"
+            android:text="@string/logIn_password"
+            android:layout_width="70dp"
+            android:layout_height="22dp"
             android:id="@+id/logIn_passwordText"
-            app:layout_constraintStart_toStartOf="parent" android:layout_marginStart="8dp"
-            app:layout_constraintEnd_toEndOf="@+id/logIn_passwordEdit" android:layout_marginEnd="8dp"
-            android:layout_marginTop="16dp" app:layout_constraintTop_toBottomOf="@+id/logIn_loginEdit"
+            app:layout_constraintStart_toStartOf="parent"
+            android:layout_marginStart="8dp"
+            app:layout_constraintEnd_toEndOf="@+id/logIn_passwordEdit"
+            android:layout_marginEnd="8dp"
+            android:layout_marginTop="12dp"
+            app:layout_constraintTop_toBottomOf="@+id/logIn_loginEdit"
             app:layout_constraintHorizontal_bias="0.4"/>
     <EditText
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:inputType="textPersonName"
+            android:inputType="textPassword"
             android:text=""
             android:ems="10"
             android:id="@+id/logIn_passwordEdit"
             android:layout_marginEnd="8dp"
-            app:layout_constraintEnd_toEndOf="parent" android:layout_marginStart="8dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginStart="8dp"
             app:layout_constraintStart_toStartOf="parent"
-            android:layout_marginTop="8dp" app:layout_constraintTop_toBottomOf="@+id/logIn_passwordText"/>
+            android:layout_marginTop="8dp"
+            app:layout_constraintTop_toBottomOf="@+id/logIn_passwordText"/>
 
 
     <Button style="@style/defaultBtn"
-            android:text="Log In"
+            android:text="@string/logIn_logInBtn"
             android:layout_width="193dp"
             android:layout_height="47dp"
             android:id="@+id/logIn_logInBtn"
@@ -68,9 +78,14 @@
 
     <ImageView
             android:layout_width="92dp"
-            android:layout_height="96dp" app:srcCompat="@drawable/ic_vk"
+            android:layout_height="96dp"
+            app:srcCompat="@raw/ic_vk"
             android:id="@+id/imageView"
-            app:layout_constraintTop_toTopOf="parent" android:layout_marginTop="8dp"
-            app:layout_constraintStart_toStartOf="parent" android:layout_marginStart="8dp"
-            app:layout_constraintEnd_toEndOf="parent" android:layout_marginEnd="8dp"/>
+            app:layout_constraintStart_toStartOf="parent"
+            android:layout_marginStart="8dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginEnd="8dp"
+            app:layout_constraintHorizontal_bias="0.498"
+            android:layout_marginTop="8dp"
+            app:layout_constraintTop_toTopOf="parent"/>
 </androidx.constraintlayout.widget.ConstraintLayout>

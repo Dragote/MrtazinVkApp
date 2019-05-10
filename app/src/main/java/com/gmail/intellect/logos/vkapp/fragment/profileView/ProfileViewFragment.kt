@@ -5,33 +5,49 @@ import android.os.Bundle
 import android.view.View
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.arellomobile.mvp.presenter.InjectPresenter
+import com.arellomobile.mvp.presenter.PresenterType
+import com.arellomobile.mvp.presenter.ProvidePresenter
+import com.arellomobile.mvp.presenter.ProvidePresenterTag
+import com.arellomobile.mvp.viewstate.strategy.SkipStrategy
+import com.arellomobile.mvp.viewstate.strategy.StateStrategyType
 import com.gmail.intellect.logos.vkapp.R
 import com.gmail.intellect.logos.vkapp.fragment.BaseFragment
+import com.gmail.intellect.logos.vkapp.fragment.profileView.feed.BaseMessage
+import com.gmail.intellect.logos.vkapp.fragment.profileView.feed.FeedAdapter
+import com.google.android.material.snackbar.Snackbar
 import kotlinx.android.synthetic.main.fragment_profile_view.*
+import kotlinx.android.synthetic.main.item_post_message.*
 
+class ProfileViewFragment : BaseFragment(R.layout.fragment_profile_view), ProfileView {
 
-class ProfileViewFragment : BaseFragment(R.layout.fragment_profile_view),
-    ProfileView {
 
 
     @InjectPresenter
-    lateinit var presenter: ProfileViewPresenter
+    internal lateinit var presenter: ProfileViewPresenter
+
+    @ProvidePresenter
+    fun providePresenter(): ProfileViewPresenter {
+        return ProfileViewPresenter()
+    }
 
     private val feedAdapter = FeedAdapter()
-
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         initToolbar()
-        initFeed()
         initBtns()
+        initFeed()
+
     }
 
     private fun initFeed() {
-
         profileViewFeed.isNestedScrollingEnabled = false
         profileViewFeed.layoutManager = LinearLayoutManager(context)
         profileViewFeed.adapter = feedAdapter
+    }
+
+    override fun showFeed(items: List<BaseMessage>) {
+        feedAdapter.setItems(items)
     }
 
     @SuppressLint("SetTextI18n")
@@ -54,10 +70,6 @@ class ProfileViewFragment : BaseFragment(R.layout.fragment_profile_view),
         profileView_education.text = education
     }
 
-    override fun showFeed(items: List<BaseMessage>) {
-        feedAdapter.setItems(items)
-    }
-
     private fun initBtns() {
         profileView_editProfileBtn.setOnClickListener {
             presenter.edit()
@@ -70,10 +82,13 @@ class ProfileViewFragment : BaseFragment(R.layout.fragment_profile_view),
             when (it.itemId) {
                 R.id.action_logout -> presenter.logout()
             }
-
             true
         }
     }
+
+
+
+
 
 
 }

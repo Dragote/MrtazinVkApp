@@ -1,19 +1,17 @@
 package com.gmail.intellect.logos.vkapp.fragment.profileEdit
 
-import android.app.Fragment
-import android.content.Context
 import android.os.Bundle
 import android.text.Editable
 import android.view.View
 import android.view.inputmethod.EditorInfo
-import android.view.inputmethod.InputMethodManager
-import android.widget.EditText
-import androidx.core.content.ContextCompat.getSystemService
 import com.arellomobile.mvp.presenter.InjectPresenter
+import com.arellomobile.mvp.presenter.PresenterType
+import com.arellomobile.mvp.presenter.ProvidePresenter
 import com.gmail.intellect.logos.vkapp.R
 import com.gmail.intellect.logos.vkapp.fragment.BaseFragment
-import com.gmail.intellect.logos.vkapp.fragment.profileView.ProfileViewFragment
 import com.gmail.intellect.logos.vkapp.fragment.profileView.ProfileViewPresenter
+import com.google.android.material.snackbar.Snackbar
+import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.android.synthetic.main.fragment_profile_edit.*
 import kotlinx.android.synthetic.main.fragment_profile_view.*
 
@@ -21,7 +19,13 @@ class ProfileEditFragment : BaseFragment(R.layout.fragment_profile_edit),Profile
 
 
     @InjectPresenter
-    lateinit var presenter: ProfileEditPresenter
+    internal lateinit var presenter: ProfileEditPresenter
+
+    @ProvidePresenter
+    fun providePresenter(): ProfileEditPresenter {
+        return ProfileEditPresenter()
+    }
+
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         initToolBar()
@@ -43,7 +47,6 @@ class ProfileEditFragment : BaseFragment(R.layout.fragment_profile_edit),Profile
         profileEdit_cityEdit.text = city.toEditable()
         profileEdit_countyEdit.text = country.toEditable()
         profileEdit_educationEdit.text = education.toEditable()
-
     }
 
     private fun initToolBar(){
@@ -52,6 +55,7 @@ class ProfileEditFragment : BaseFragment(R.layout.fragment_profile_edit),Profile
             when (it.itemId) {
                 R.id.action_save_edit -> {
                     profileEdit_firstNameEdit.onEditorAction(EditorInfo.IME_ACTION_DONE)
+
                     presenter.saveEdit(
                         profileEdit_firstNameEdit.text.toString(),
                         profileEdit_lastNameEdit.text.toString(),
@@ -60,21 +64,23 @@ class ProfileEditFragment : BaseFragment(R.layout.fragment_profile_edit),Profile
                         profileEdit_sexEdit.text.toString(),
                         profileEdit_cityEdit.text.toString(),
                         profileEdit_countyEdit.text.toString(),
-                        profileEdit_educationEdit.text.toString()
-                    )
+                        profileEdit_educationEdit.text.toString())
+
+                        Snackbar.make(activity?.findViewById(android.R.id.content)!!,
+                        resources.getString(R.string.save_done),
+                        Snackbar.LENGTH_LONG)
+                        .show()
 
                 }
-
-
-                R.id.action_cancel_edit -> presenter.cancelEdit()
+                R.id.action_cancel_edit -> {
+                    profileEdit_firstNameEdit.onEditorAction(EditorInfo.IME_ACTION_DONE)
+                    presenter.cancelEdit()}
             }
             true
         }
     }
 
-
     private fun String.toEditable(): Editable = Editable.Factory.getInstance().newEditable(this)
-
 
 
 }

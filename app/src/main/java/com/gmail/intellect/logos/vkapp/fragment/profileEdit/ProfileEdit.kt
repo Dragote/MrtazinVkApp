@@ -1,9 +1,10 @@
 package com.gmail.intellect.logos.vkapp.fragment.profileEdit
 
-import android.text.Editable
 import com.arellomobile.mvp.MvpView
-import java.util.*
+import com.arellomobile.mvp.viewstate.strategy.AddToEndSingleStrategy
+import com.arellomobile.mvp.viewstate.strategy.StateStrategyType
 
+@StateStrategyType(AddToEndSingleStrategy::class)
 interface ProfileEdit : MvpView {
     fun showProfileInfo(firstName: String,
                         lastName: String,
