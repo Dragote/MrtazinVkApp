@@ -16,7 +16,7 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
 
         navigator = Navigator(this, supportFragmentManager, R.id.content)
-        App.INCTANCE.router.newRootScreen(Screen.LogInScreen())
+        App.INCTANCE.router.newRootScreen(Screen.SplashScreen())
     }
 
     override fun onResume() {
