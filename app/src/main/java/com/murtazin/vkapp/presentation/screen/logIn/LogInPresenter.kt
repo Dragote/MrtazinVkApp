@@ -5,9 +5,10 @@ import com.arellomobile.mvp.MvpPresenter
 import com.murtazin.vkapp.App
 import com.murtazin.vkapp.presentation.common.BasePresenter
 import com.murtazin.vkapp.presentation.navigation.Screen
+import ru.terrakok.cicerone.Router
 
 @InjectViewState
-class LogInPresenter : BasePresenter<LogIn>() {
+class LogInPresenter(private val router: Router) : BasePresenter<LogIn>() {
 
     override fun onFirstViewAttach() {
         super.onFirstViewAttach()
@@ -15,7 +16,7 @@ class LogInPresenter : BasePresenter<LogIn>() {
     }
 
     fun logIn(){
-        App.INCTANCE.router.newRootScreen(Screen.ProfileViewScreen())
+        router.newRootScreen(Screen.ProfileViewScreen())
     }
 
 }

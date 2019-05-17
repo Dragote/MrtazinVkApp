@@ -9,9 +9,10 @@ import com.murtazin.vkapp.data.Repository.firstName
 import com.murtazin.vkapp.data.Repository.lastName
 import com.murtazin.vkapp.presentation.common.BasePresenter
 import com.murtazin.vkapp.presentation.navigation.Screen
+import ru.terrakok.cicerone.Router
 
 @InjectViewState
-class ProfileViewPresenter : BasePresenter<ProfileView>() {
+class ProfileViewPresenter(private val router: Router) : BasePresenter<ProfileView>() {
 
     override fun onFirstViewAttach() {
         super.onFirstViewAttach()
@@ -86,10 +87,10 @@ class ProfileViewPresenter : BasePresenter<ProfileView>() {
     }
 
     fun logout() {
-        App.INCTANCE.router.newRootScreen(Screen.LogInScreen())
+       router.newRootScreen(Screen.LogInScreen())
     }
     fun edit() {
-        App.INCTANCE.router.navigateTo(Screen.ProfileEditScreen())
+        router.navigateTo(Screen.ProfileEditScreen())
 
     }
 

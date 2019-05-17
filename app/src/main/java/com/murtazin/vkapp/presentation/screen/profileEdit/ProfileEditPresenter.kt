@@ -6,9 +6,10 @@ import com.murtazin.vkapp.App
 import com.murtazin.vkapp.data.Repository
 import com.murtazin.vkapp.presentation.common.BasePresenter
 import com.murtazin.vkapp.presentation.navigation.Screen
+import ru.terrakok.cicerone.Router
 
 @InjectViewState
-class ProfileEditPresenter : BasePresenter<ProfileEdit>() {
+class ProfileEditPresenter(private val router: Router) : BasePresenter<ProfileEdit>() {
 
     override fun onFirstViewAttach() {
         super.onFirstViewAttach()
@@ -17,7 +18,7 @@ class ProfileEditPresenter : BasePresenter<ProfileEdit>() {
     }
 
     fun cancelEdit() {
-        App.INCTANCE.router.newRootScreen(Screen.ProfileViewScreen())
+        router.newRootScreen(Screen.ProfileViewScreen())
     }
 
     fun saveEdit(
@@ -32,7 +33,7 @@ class ProfileEditPresenter : BasePresenter<ProfileEdit>() {
     ) {
         Repository.setData(firstName, lastName, status, birthday, sex, city, country, education)
 
-        App.INCTANCE.router.navigateTo(Screen.ProfileViewScreen())
+        router.navigateTo(Screen.ProfileViewScreen())
 
 
     }

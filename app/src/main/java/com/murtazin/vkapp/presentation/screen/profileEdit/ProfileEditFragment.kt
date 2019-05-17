@@ -11,6 +11,7 @@ import com.murtazin.vkapp.presentation.common.BaseFragment
 import com.murtazin.vkapp.data.Repository
 import com.google.android.material.snackbar.Snackbar
 import kotlinx.android.synthetic.main.fragment_profile_edit.*
+import org.koin.android.ext.android.get
 
 class ProfileEditFragment : BaseFragment(R.layout.fragment_profile_edit),
     ProfileEdit {
@@ -19,9 +20,7 @@ class ProfileEditFragment : BaseFragment(R.layout.fragment_profile_edit),
     internal lateinit var presenter: ProfileEditPresenter
 
     @ProvidePresenter
-    fun providePresenter(): ProfileEditPresenter {
-        return ProfileEditPresenter()
-    }
+    fun providePresenter(): ProfileEditPresenter = get()
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)

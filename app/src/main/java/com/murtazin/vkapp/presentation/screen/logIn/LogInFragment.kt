@@ -9,6 +9,7 @@ import com.arellomobile.mvp.presenter.ProvidePresenter
 import com.murtazin.vkapp.R
 import com.murtazin.vkapp.presentation.common.BaseFragment
 import kotlinx.android.synthetic.main.fragment_log_in.*
+import org.koin.android.ext.android.get
 
 class LogInFragment : BaseFragment(R.layout.fragment_log_in),
     LogIn {
@@ -17,9 +18,7 @@ class LogInFragment : BaseFragment(R.layout.fragment_log_in),
     internal lateinit var presenter: LogInPresenter
 
     @ProvidePresenter
-    fun providePresenter(): LogInPresenter {
-        return LogInPresenter()
-    }
+    fun providePresenter(): LogInPresenter = get()
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)

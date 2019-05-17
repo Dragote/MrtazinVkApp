@@ -5,14 +5,15 @@ import com.arellomobile.mvp.MvpPresenter
 import com.murtazin.vkapp.App
 import com.murtazin.vkapp.presentation.common.BasePresenter
 import com.murtazin.vkapp.presentation.navigation.Screen
+import ru.terrakok.cicerone.Router
 
-class SplashPresenter : BasePresenter<SplashView>() {
+class SplashPresenter(private val router: Router) : BasePresenter<SplashView>() {
 
     override fun onFirstViewAttach() {
         super.onFirstViewAttach()
 
         Handler().postDelayed({
-            App.INCTANCE.router.newRootScreen(Screen.LogInScreen())
+            router.newRootScreen(Screen.LogInScreen())
         }, 2000)
     }
 }
