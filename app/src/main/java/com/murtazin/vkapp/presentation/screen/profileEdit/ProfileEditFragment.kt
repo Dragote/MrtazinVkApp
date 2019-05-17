@@ -1,7 +1,6 @@
 package com.murtazin.vkapp.presentation.screen.profileEdit
 
 import android.os.Bundle
-import android.text.Editable
 import android.view.View
 import android.view.inputmethod.EditorInfo
 import com.arellomobile.mvp.presenter.InjectPresenter
@@ -10,6 +9,7 @@ import com.murtazin.vkapp.R
 import com.murtazin.vkapp.presentation.common.BaseFragment
 import com.murtazin.vkapp.data.Repository
 import com.google.android.material.snackbar.Snackbar
+import com.murtazin.vkapp.presentation.extensions.toEditable
 import kotlinx.android.synthetic.main.fragment_profile_edit.*
 import org.koin.android.ext.android.get
 
@@ -73,7 +73,7 @@ class ProfileEditFragment : BaseFragment(R.layout.fragment_profile_edit),
         TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
     }
 
-    private fun String.toEditable(): Editable = Editable.Factory.getInstance().newEditable(this)
+
 
 
 }

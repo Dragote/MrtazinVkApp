@@ -1,13 +1,13 @@
 package com.murtazin.vkapp.presentation.screen.logIn
 
 import android.os.Bundle
-import android.text.Editable
 import android.view.View
 import android.view.inputmethod.EditorInfo
 import com.arellomobile.mvp.presenter.InjectPresenter
 import com.arellomobile.mvp.presenter.ProvidePresenter
 import com.murtazin.vkapp.R
 import com.murtazin.vkapp.presentation.common.BaseFragment
+import com.murtazin.vkapp.presentation.extensions.toEditable
 import kotlinx.android.synthetic.main.fragment_log_in.*
 import org.koin.android.ext.android.get
 
@@ -46,7 +46,7 @@ class LogInFragment : BaseFragment(R.layout.fragment_log_in),
     }
 
 
-    private fun String.toEditable(): Editable = Editable.Factory.getInstance().newEditable(this)
+
 }
 
 
