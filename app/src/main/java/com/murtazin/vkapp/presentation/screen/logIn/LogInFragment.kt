@@ -9,16 +9,17 @@ import com.murtazin.vkapp.R
 import com.murtazin.vkapp.presentation.common.BaseFragment
 import com.murtazin.vkapp.presentation.extensions.toEditable
 import kotlinx.android.synthetic.main.fragment_log_in.*
-import org.koin.android.ext.android.get
+import javax.inject.Inject
 
 class LogInFragment : BaseFragment(R.layout.fragment_log_in),
     LogIn {
 
+    @Inject
     @InjectPresenter
     internal lateinit var presenter: LogInPresenter
 
     @ProvidePresenter
-    fun providePresenter(): LogInPresenter = get()
+    fun providePresenter(): LogInPresenter = presenter
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)

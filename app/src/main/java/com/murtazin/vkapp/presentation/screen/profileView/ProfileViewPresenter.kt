@@ -10,9 +10,10 @@ import com.murtazin.vkapp.data.Repository.lastName
 import com.murtazin.vkapp.presentation.common.BasePresenter
 import com.murtazin.vkapp.presentation.navigation.Screen
 import ru.terrakok.cicerone.Router
+import javax.inject.Inject
 
 @InjectViewState
-class ProfileViewPresenter(private val router: Router) : BasePresenter<ProfileView>() {
+class ProfileViewPresenter @Inject constructor(private val router: Router) : BasePresenter<ProfileView>() {
 
     override fun onFirstViewAttach() {
         super.onFirstViewAttach()

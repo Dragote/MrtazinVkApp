@@ -12,16 +12,17 @@ import com.murtazin.vkapp.presentation.screen.profileView.feed.BaseMessage
 import com.murtazin.vkapp.presentation.screen.profileView.feed.FeedAdapter
 import com.murtazin.vkapp.data.Repository
 import kotlinx.android.synthetic.main.fragment_profile_view.*
-import org.koin.android.ext.android.get
+import javax.inject.Inject
 
 class ProfileViewFragment : BaseFragment(R.layout.fragment_profile_view),
     ProfileView {
 
+    @Inject
     @InjectPresenter
     internal lateinit var presenter: ProfileViewPresenter
 
     @ProvidePresenter
-    fun providePresenter(): ProfileViewPresenter = get()
+    fun providePresenter(): ProfileViewPresenter = presenter
 
     private val feedAdapter = FeedAdapter()
 
