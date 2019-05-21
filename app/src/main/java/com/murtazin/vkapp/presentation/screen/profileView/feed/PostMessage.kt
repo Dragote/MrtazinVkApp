@@ -9,5 +9,6 @@ class PostMessage(
     val musicSongName: String,
     val musicAuthor: String,
     val likes: Int,
-    val date: String
+    val date: String,
+    val avatarUrl: String
 ) : BaseMessage(id)

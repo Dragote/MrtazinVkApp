@@ -49,7 +49,7 @@ class FeedAdapter : RecyclerView.Adapter<RecyclerView.ViewHolder>() {
 
     inner class PostMessageHolder(view: View) : RecyclerView.ViewHolder(view) {
         fun bind(data: PostMessage) {
-
+            itemView.profile_image.loadImage(data.avatarUrl)
             itemView.item_profileName.text = data.profileName
             itemView.item_postDate.text = data.date
             itemView.item_likes.text = data.likes.toString()

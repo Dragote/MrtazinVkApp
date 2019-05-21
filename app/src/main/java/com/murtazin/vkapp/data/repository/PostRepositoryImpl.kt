@@ -17,7 +17,8 @@ class PostRepositoryImpl @Inject constructor(private val profileRepository: Prof
                 "",
                 "",
                 43,
-                "14 август 2018"
+                "14 август 2018",
+                "https://pp.userapi.com/c824602/v824602809/f7624/95vngsg5onM.jpg?ava=1"
             ),
             PostMessage(
                 1, "${profileRepository.getProfile().firstName} ${profileRepository.getProfile().lastName}",
@@ -27,7 +28,8 @@ class PostRepositoryImpl @Inject constructor(private val profileRepository: Prof
                 "",
                 "",
                 21,
-                "14 август 2018"
+                "14 август 2018",
+                "https://pp.userapi.com/c824602/v824602809/f7624/95vngsg5onM.jpg?ava=1"
             ),
             PostMessage(
                 2, "${profileRepository.getProfile().firstName} ${profileRepository.getProfile().lastName}",
@@ -37,7 +39,8 @@ class PostRepositoryImpl @Inject constructor(private val profileRepository: Prof
                 "In cold blood",
                 "Alt-J",
                 13,
-                "14 август 2018"
+                "14 август 2018",
+                "https://pp.userapi.com/c824602/v824602809/f7624/95vngsg5onM.jpg?ava=1"
             ),
             PostMessage(
                 3, "${profileRepository.getProfile().firstName} ${profileRepository.getProfile().lastName}",
@@ -47,7 +50,8 @@ class PostRepositoryImpl @Inject constructor(private val profileRepository: Prof
                 "In cold blood",
                 "Alt-J",
                 96,
-                "14 август 2018"
+                "14 август 2018",
+                "https://pp.userapi.com/c824602/v824602809/f7624/95vngsg5onM.jpg?ava=1"
             ),
             PostMessage(
                 4, "${profileRepository.getProfile().firstName} ${profileRepository.getProfile().lastName}",
@@ -57,7 +61,8 @@ class PostRepositoryImpl @Inject constructor(private val profileRepository: Prof
                 "",
                 "",
                 43,
-                "14 август 2018"
+                "14 август 2018",
+                "https://pp.userapi.com/c824602/v824602809/f7624/95vngsg5onM.jpg?ava=1"
             ),
             PostMessage(
                 5, "${profileRepository.getProfile().firstName} ${profileRepository.getProfile().lastName}",
@@ -67,7 +72,8 @@ class PostRepositoryImpl @Inject constructor(private val profileRepository: Prof
                 "In cold blood",
                 "Alt-J",
                 43,
-                "14 август 2018"
+                "14 август 2018",
+                "https://pp.userapi.com/c824602/v824602809/f7624/95vngsg5onM.jpg?ava=1"
             )
         )
 
