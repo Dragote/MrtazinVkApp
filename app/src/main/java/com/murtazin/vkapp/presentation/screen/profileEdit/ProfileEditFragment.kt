@@ -7,9 +7,10 @@ import com.arellomobile.mvp.presenter.InjectPresenter
 import com.arellomobile.mvp.presenter.ProvidePresenter
 import com.murtazin.vkapp.R
 import com.murtazin.vkapp.presentation.common.BaseFragment
-import com.murtazin.vkapp.data.Repository
 import com.google.android.material.snackbar.Snackbar
+import com.murtazin.vkapp.domain.repository.ProfileRepository
 import com.murtazin.vkapp.presentation.extensions.toEditable
+import com.murtazin.vkapp.presentation.models.Profile
 import kotlinx.android.synthetic.main.fragment_profile_edit.*
 import javax.inject.Inject
 
@@ -28,15 +29,15 @@ class ProfileEditFragment : BaseFragment(R.layout.fragment_profile_edit),
         initToolBar()
     }
 
-    override fun showProfileInfo(repository: Repository) {
-        profileEdit_firstNameEdit.text = repository.firstName.toEditable()
-        profileEdit_lastNameEdit.text = repository.lastName.toEditable()
-        profileEdit_statusEdit.text = repository.status.toEditable()
-        profileEdit_birthdayEdit.text = repository.birthday.toEditable()
-        profileEdit_sexEdit.text = repository.sex.toEditable()
-        profileEdit_cityEdit.text = repository.city.toEditable()
-        profileEdit_countyEdit.text = repository.country.toEditable()
-        profileEdit_educationEdit.text = repository.education.toEditable()
+    override fun showProfileInfo(profile : Profile) {
+        profileEdit_firstNameEdit.text = profile.firstName.toEditable()
+        profileEdit_lastNameEdit.text = profile.lastName.toEditable()
+        profileEdit_statusEdit.text = profile.status.toEditable()
+        profileEdit_birthdayEdit.text = profile.birthday.toEditable()
+        profileEdit_sexEdit.text = profile.sex.toEditable()
+        profileEdit_cityEdit.text = profile.city.toEditable()
+        profileEdit_countyEdit.text = profile.country.toEditable()
+        profileEdit_educationEdit.text = profile.education.toEditable()
     }
 
     private fun initToolBar() {
@@ -46,23 +47,8 @@ class ProfileEditFragment : BaseFragment(R.layout.fragment_profile_edit),
                 R.id.action_save_edit -> {
                     profileEdit_firstNameEdit.onEditorAction(EditorInfo.IME_ACTION_DONE)
 
-                    presenter.saveEdit(
-                        profileEdit_firstNameEdit.text.toString(),
-                        profileEdit_lastNameEdit.text.toString(),
-                        profileEdit_statusEdit.text.toString(),
-                        profileEdit_birthdayEdit.text.toString(),
-                        profileEdit_sexEdit.text.toString(),
-                        profileEdit_cityEdit.text.toString(),
-                        profileEdit_countyEdit.text.toString(),
-                        profileEdit_educationEdit.text.toString()
-                    )
-
-                    Snackbar.make(
-                        activity?.findViewById(android.R.id.content)!!,
-                        resources.getString(R.string.save_done),
-                        Snackbar.LENGTH_LONG
-                    )
-                        .show()
+                    presenter.saveEdit()
+                    showSavedSuccSnackbar()
                 }
                 R.id.action_cancel_edit -> {
                     profileEdit_firstNameEdit.onEditorAction(EditorInfo.IME_ACTION_DONE)
@@ -75,5 +61,14 @@ class ProfileEditFragment : BaseFragment(R.layout.fragment_profile_edit),
 
     override fun showNetworkError() {
         TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
+    }
+
+    private fun showSavedSuccSnackbar(){
+        Snackbar.make(
+            activity?.findViewById(android.R.id.content)!!,
+            resources.getString(R.string.save_done),
+            Snackbar.LENGTH_LONG
+        )
+            .show()
     }
 }

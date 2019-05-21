@@ -7,10 +7,12 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import com.arellomobile.mvp.presenter.InjectPresenter
 import com.arellomobile.mvp.presenter.ProvidePresenter
 import com.murtazin.vkapp.R
+import com.murtazin.vkapp.domain.repository.ProfileRepository
 import com.murtazin.vkapp.presentation.common.BaseFragment
+import com.murtazin.vkapp.presentation.common.loadImage
+import com.murtazin.vkapp.presentation.models.Profile
 import com.murtazin.vkapp.presentation.screen.profileView.feed.BaseMessage
 import com.murtazin.vkapp.presentation.screen.profileView.feed.FeedAdapter
-import com.murtazin.vkapp.data.Repository
 import kotlinx.android.synthetic.main.fragment_profile_view.*
 import javax.inject.Inject
 
@@ -45,14 +47,15 @@ class ProfileViewFragment : BaseFragment(R.layout.fragment_profile_view),
     }
 
     @SuppressLint("SetTextI18n")
-    override fun showProfile(repository: Repository) {
-        profileView_name.text = "${repository.firstName} ${repository.lastName}"
-        profileView_status.text = repository.status
-        profileView_birthday.text = repository.birthday
-        profileView_sex.text = repository.sex
-        profileView_city.text = repository.city
-        profileView_country.text = repository.country
-        profileView_education.text = repository.education
+    override fun showProfile(profile: Profile) {
+        profileView_name.text = "${profile.firstName} ${profile.lastName}"
+        profileView_status.text = profile.status
+        profileView_birthday.text = profile.birthday
+        profileView_sex.text = profile.sex
+        profileView_city.text = profile.city
+        profileView_country.text = profile.country
+        profileView_education.text = profile.education
+        profileView_avatar.loadImage(profile.avatarUrl)
     }
 
     private fun initBtns() {

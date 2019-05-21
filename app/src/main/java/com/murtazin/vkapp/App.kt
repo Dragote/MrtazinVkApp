@@ -1,8 +1,10 @@
 package com.murtazin.vkapp
 
+
 import com.murtazin.vkapp.dagger.DaggerAppComponent
 import dagger.android.AndroidInjector
 import dagger.android.DaggerApplication
+
 
 class App : DaggerApplication() {
 

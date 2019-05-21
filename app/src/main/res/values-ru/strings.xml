@@ -19,4 +19,5 @@
     <string name="profile_lastName">Фамилия</string>
     <string name="profile_status">Статус</string>
     <string name="save_done">Изменения успешно сохранены</string>
+    <string name="avatar">Аватар</string>
 </resources>
