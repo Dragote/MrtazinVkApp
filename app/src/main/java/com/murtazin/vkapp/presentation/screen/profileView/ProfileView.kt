@@ -11,5 +11,4 @@ interface ProfileView : MvpView {
     fun showProfile(repository: Repository)
     fun showFeed(items: List<BaseMessage>)
     fun showNetworkError()
-
 }

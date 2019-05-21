@@ -6,7 +6,6 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.murtazin.vkapp.R
 import com.murtazin.vkapp.presentation.common.loadImage
-
 import kotlinx.android.synthetic.main.item_post_message.view.*
 import java.lang.IllegalArgumentException
 
@@ -25,7 +24,6 @@ class FeedAdapter : RecyclerView.Adapter<RecyclerView.ViewHolder>() {
                 false
             )
         )
-
         else -> throw IllegalArgumentException("viewType $viewType not found")
     }
 
@@ -56,7 +54,7 @@ class FeedAdapter : RecyclerView.Adapter<RecyclerView.ViewHolder>() {
             itemView.item_postDate.text = data.date
             itemView.item_likes.text = data.likes.toString()
 
-            if(data.message.isNotEmpty()) {
+            if (data.message.isNotEmpty()) {
                 itemView.itemPostMessage.text = data.message
                 itemView.itemPostMessage.visibility = View.VISIBLE
             }
@@ -71,13 +69,12 @@ class FeedAdapter : RecyclerView.Adapter<RecyclerView.ViewHolder>() {
                 itemView.item_musicAudioAuthor.text = data.musicAuthor
                 itemView.item_musicAudioName.text = data.musicSongName
             }
-           if (data.video.isNotEmpty()) {
-               itemView.item_video.visibility = View.VISIBLE
+            if (data.video.isNotEmpty()) {
+                itemView.item_video.visibility = View.VISIBLE
 
-           }
+            }
 
         }
-
     }
 }
 

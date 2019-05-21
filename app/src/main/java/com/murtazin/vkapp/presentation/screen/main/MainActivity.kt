@@ -2,25 +2,20 @@ package com.murtazin.vkapp.presentation.screen.main
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
-
 import com.arellomobile.mvp.presenter.InjectPresenter
 import com.arellomobile.mvp.presenter.ProvidePresenter
-import com.murtazin.vkapp.App
 import com.murtazin.vkapp.R
 import com.murtazin.vkapp.presentation.moxy.MvpAppCompatActivity
 import com.murtazin.vkapp.presentation.navigation.Navigator
 import dagger.android.AndroidInjection
 import dagger.android.AndroidInjector
 import dagger.android.DispatchingAndroidInjector
-import dagger.android.support.AndroidSupportInjection
 import dagger.android.support.HasSupportFragmentInjector
 import ru.terrakok.cicerone.NavigatorHolder
-import ru.terrakok.cicerone.Router
 import ru.terrakok.cicerone.android.support.SupportAppNavigator
 import javax.inject.Inject
 
 class MainActivity : MvpAppCompatActivity(), HasSupportFragmentInjector, MainView {
-
 
     @Inject
     @InjectPresenter
@@ -29,13 +24,13 @@ class MainActivity : MvpAppCompatActivity(), HasSupportFragmentInjector, MainVie
     @ProvidePresenter
     fun providePresenter(): MainPresenter = presenter
 
-    @Inject
-    lateinit var  supportFragmentInjector: DispatchingAndroidInjector<Fragment>
-
     override fun supportFragmentInjector(): AndroidInjector<Fragment> = supportFragmentInjector
 
     @Inject
-    lateinit var navigatorHolder : NavigatorHolder
+    lateinit var supportFragmentInjector: DispatchingAndroidInjector<Fragment>
+
+    @Inject
+    lateinit var navigatorHolder: NavigatorHolder
 
     private val navigator: SupportAppNavigator by lazy {
         Navigator(this, supportFragmentManager, R.id.content)

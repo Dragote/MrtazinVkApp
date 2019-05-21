@@ -9,5 +9,4 @@ import com.murtazin.vkapp.data.Repository
 interface ProfileEdit : MvpView {
     fun showProfileInfo(repository: Repository)
     fun showNetworkError()
-
 }

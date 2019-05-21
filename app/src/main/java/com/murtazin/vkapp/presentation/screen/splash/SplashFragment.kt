@@ -6,7 +6,7 @@ import com.murtazin.vkapp.R
 import com.murtazin.vkapp.presentation.common.BaseFragment
 import javax.inject.Inject
 
-class SplashFragment: BaseFragment(R.layout.fragment_splash),
+class SplashFragment : BaseFragment(R.layout.fragment_splash),
     SplashView {
 
     @Inject

@@ -12,18 +12,18 @@ interface MainActivityModules {
 
     @FragmentScope
     @ContributesAndroidInjector
-    fun provideSplashFragment():SplashFragment
+    fun provideSplashFragment(): SplashFragment
 
     @FragmentScope
     @ContributesAndroidInjector
-    fun provideProfileViewFragment():ProfileViewFragment
+    fun provideProfileViewFragment(): ProfileViewFragment
 
     @FragmentScope
     @ContributesAndroidInjector
-    fun provideProfileEditFragment():ProfileEditFragment
+    fun provideProfileEditFragment(): ProfileEditFragment
 
     @FragmentScope
     @ContributesAndroidInjector
-    fun provideLogInFragment():LogInFragment
+    fun provideLogInFragment(): LogInFragment
 
 }

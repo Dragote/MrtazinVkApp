@@ -9,5 +9,5 @@ interface AppModule {
 
     @ActivityScope
     @ContributesAndroidInjector(modules = [MainActivityModules::class])
-    fun provideMainAtivity() : MainActivity
+    fun provideMainAtivity(): MainActivity
 }

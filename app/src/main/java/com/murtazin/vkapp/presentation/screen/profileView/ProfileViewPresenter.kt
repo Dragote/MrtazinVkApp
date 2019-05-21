@@ -1,8 +1,6 @@
 package com.murtazin.vkapp.presentation.screen.profileView
 
 import com.arellomobile.mvp.InjectViewState
-import com.arellomobile.mvp.MvpPresenter
-import com.murtazin.vkapp.App
 import com.murtazin.vkapp.presentation.screen.profileView.feed.PostMessage
 import com.murtazin.vkapp.data.Repository
 import com.murtazin.vkapp.data.Repository.firstName
@@ -88,12 +86,11 @@ class ProfileViewPresenter @Inject constructor(private val router: Router) : Bas
     }
 
     fun logout() {
-       router.newRootScreen(Screen.LogInScreen())
+        router.newRootScreen(Screen.LogInScreen())
     }
+
     fun edit() {
         router.navigateTo(Screen.ProfileEditScreen())
 
     }
-
-
 }

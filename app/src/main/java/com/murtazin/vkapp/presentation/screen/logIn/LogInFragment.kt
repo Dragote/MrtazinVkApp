@@ -16,7 +16,7 @@ class LogInFragment : BaseFragment(R.layout.fragment_log_in),
 
     @Inject
     @InjectPresenter
-    internal lateinit var presenter: LogInPresenter
+    lateinit var presenter: LogInPresenter
 
     @ProvidePresenter
     fun providePresenter(): LogInPresenter = presenter
@@ -45,8 +45,6 @@ class LogInFragment : BaseFragment(R.layout.fragment_log_in),
     override fun showNetworkError() {
         TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
     }
-
-
 
 }
 

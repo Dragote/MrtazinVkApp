@@ -19,7 +19,7 @@ class ProfileViewFragment : BaseFragment(R.layout.fragment_profile_view),
 
     @Inject
     @InjectPresenter
-    internal lateinit var presenter: ProfileViewPresenter
+    lateinit var presenter: ProfileViewPresenter
 
     @ProvidePresenter
     fun providePresenter(): ProfileViewPresenter = presenter
@@ -70,6 +70,7 @@ class ProfileViewFragment : BaseFragment(R.layout.fragment_profile_view),
             true
         }
     }
+
     override fun showNetworkError() {
         TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
     }

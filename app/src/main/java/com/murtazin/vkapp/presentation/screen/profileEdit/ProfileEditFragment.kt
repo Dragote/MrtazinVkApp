@@ -18,7 +18,7 @@ class ProfileEditFragment : BaseFragment(R.layout.fragment_profile_edit),
 
     @Inject
     @InjectPresenter
-    internal lateinit var presenter: ProfileEditPresenter
+    lateinit var presenter: ProfileEditPresenter
 
     @ProvidePresenter
     fun providePresenter(): ProfileEditPresenter = presenter
@@ -28,7 +28,7 @@ class ProfileEditFragment : BaseFragment(R.layout.fragment_profile_edit),
         initToolBar()
     }
 
-    override fun showProfileInfo( repository : Repository) {
+    override fun showProfileInfo(repository: Repository) {
         profileEdit_firstNameEdit.text = repository.firstName.toEditable()
         profileEdit_lastNameEdit.text = repository.lastName.toEditable()
         profileEdit_statusEdit.text = repository.status.toEditable()
@@ -39,7 +39,7 @@ class ProfileEditFragment : BaseFragment(R.layout.fragment_profile_edit),
         profileEdit_educationEdit.text = repository.education.toEditable()
     }
 
-    private fun initToolBar(){
+    private fun initToolBar() {
         profileEditToolbar.inflateMenu(R.menu.menu_profile_edit)
         profileEditToolbar.setOnMenuItemClickListener {
             when (it.itemId) {
@@ -54,17 +54,20 @@ class ProfileEditFragment : BaseFragment(R.layout.fragment_profile_edit),
                         profileEdit_sexEdit.text.toString(),
                         profileEdit_cityEdit.text.toString(),
                         profileEdit_countyEdit.text.toString(),
-                        profileEdit_educationEdit.text.toString())
+                        profileEdit_educationEdit.text.toString()
+                    )
 
-                        Snackbar.make(activity?.findViewById(android.R.id.content)!!,
+                    Snackbar.make(
+                        activity?.findViewById(android.R.id.content)!!,
                         resources.getString(R.string.save_done),
-                        Snackbar.LENGTH_LONG)
+                        Snackbar.LENGTH_LONG
+                    )
                         .show()
-
                 }
                 R.id.action_cancel_edit -> {
                     profileEdit_firstNameEdit.onEditorAction(EditorInfo.IME_ACTION_DONE)
-                    presenter.cancelEdit()}
+                    presenter.cancelEdit()
+                }
             }
             true
         }
@@ -73,8 +76,4 @@ class ProfileEditFragment : BaseFragment(R.layout.fragment_profile_edit),
     override fun showNetworkError() {
         TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
     }
-
-
-
-
 }

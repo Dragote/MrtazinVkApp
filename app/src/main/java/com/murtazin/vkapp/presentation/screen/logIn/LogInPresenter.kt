@@ -1,8 +1,6 @@
 package com.murtazin.vkapp.presentation.screen.logIn
 
 import com.arellomobile.mvp.InjectViewState
-import com.arellomobile.mvp.MvpPresenter
-import com.murtazin.vkapp.App
 import com.murtazin.vkapp.presentation.common.BasePresenter
 import com.murtazin.vkapp.presentation.navigation.Screen
 import ru.terrakok.cicerone.Router
@@ -16,7 +14,7 @@ class LogInPresenter @Inject constructor(private val router: Router) : BasePrese
         viewState.initLogInScreen("default login", "default password")
     }
 
-    fun logIn(){
+    fun logIn() {
         router.newRootScreen(Screen.ProfileViewScreen())
     }
 

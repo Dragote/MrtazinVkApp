@@ -1,8 +1,6 @@
 package com.murtazin.vkapp.presentation.screen.profileEdit
 
 import com.arellomobile.mvp.InjectViewState
-import com.arellomobile.mvp.MvpPresenter
-import com.murtazin.vkapp.App
 import com.murtazin.vkapp.data.Repository
 import com.murtazin.vkapp.presentation.common.BasePresenter
 import com.murtazin.vkapp.presentation.navigation.Screen
@@ -14,7 +12,6 @@ class ProfileEditPresenter @Inject constructor(private val router: Router) : Bas
 
     override fun onFirstViewAttach() {
         super.onFirstViewAttach()
-
         viewState.showProfileInfo(Repository)
     }
 
@@ -33,13 +30,8 @@ class ProfileEditPresenter @Inject constructor(private val router: Router) : Bas
         education: String
     ) {
         Repository.setData(firstName, lastName, status, birthday, sex, city, country, education)
-
         router.navigateTo(Screen.ProfileViewScreen())
-
-
     }
-
-
 }
 
 
