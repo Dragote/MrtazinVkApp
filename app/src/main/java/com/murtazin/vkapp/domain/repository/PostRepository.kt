@@ -1,6 +1,7 @@
 package com.murtazin.vkapp.domain.repository
 
 import com.murtazin.vkapp.domain.entity.PostMessage
+import io.reactivex.Single
 
 interface PostRepository {
 

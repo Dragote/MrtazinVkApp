@@ -28,8 +28,10 @@ class LogInFragment : BaseFragment(R.layout.fragment_log_in),
 
     private fun initLogInScreen() {
         logIn_logInBtn.setOnClickListener {
+            val email = logIn_loginEdit.text.toString()
+            val password = logIn_passwordEdit.text.toString()
             logIn_passwordEdit.onEditorAction(EditorInfo.IME_ACTION_DONE)
-            presenter.logIn()
+            presenter.logIn(email, password)
         }
     }
 

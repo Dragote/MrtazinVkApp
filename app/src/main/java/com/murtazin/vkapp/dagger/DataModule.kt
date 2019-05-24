@@ -10,7 +10,10 @@ import dagger.Binds
 import dagger.Module
 import dagger.Reusable
 
-@Module(includes = [NetworkModule::class])
+@Module(includes = [
+    NetworkModule::class,
+    ConverterModule::class
+])
 interface DataModule {
 
     @Reusable
