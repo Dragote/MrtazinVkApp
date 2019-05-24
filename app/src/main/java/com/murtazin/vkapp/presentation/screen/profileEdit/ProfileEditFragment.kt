@@ -8,9 +8,8 @@ import com.arellomobile.mvp.presenter.ProvidePresenter
 import com.murtazin.vkapp.R
 import com.murtazin.vkapp.presentation.common.BaseFragment
 import com.google.android.material.snackbar.Snackbar
-import com.murtazin.vkapp.domain.repository.ProfileRepository
 import com.murtazin.vkapp.presentation.extensions.toEditable
-import com.murtazin.vkapp.presentation.models.Profile
+import com.murtazin.vkapp.domain.entity.Profile
 import kotlinx.android.synthetic.main.fragment_profile_edit.*
 import javax.inject.Inject
 

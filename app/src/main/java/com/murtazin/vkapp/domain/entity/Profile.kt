@@ -1,4 +1,4 @@
-package com.murtazin.vkapp.presentation.models
+package com.murtazin.vkapp.domain.entity
 
 class Profile (
     val id: Long,

@@ -1,10 +1,10 @@
 package com.murtazin.vkapp.domain.repository
 
-import com.murtazin.vkapp.presentation.screen.profileView.feed.BaseMessage
+import com.murtazin.vkapp.domain.entity.PostMessage
 
 interface PostRepository {
 
-    fun getAll(): List<BaseMessage>
+    fun getAll(): List<PostMessage>
 
-    fun getPost(id: Long): BaseMessage
+    fun getPost(id: Long): PostMessage
 }

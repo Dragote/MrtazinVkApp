@@ -2,12 +2,11 @@ package com.murtazin.vkapp.data.repository
 
 import com.murtazin.vkapp.domain.repository.PostRepository
 import com.murtazin.vkapp.domain.repository.ProfileRepository
-import com.murtazin.vkapp.presentation.screen.profileView.feed.BaseMessage
-import com.murtazin.vkapp.presentation.screen.profileView.feed.PostMessage
+import com.murtazin.vkapp.domain.entity.PostMessage
 import javax.inject.Inject
 
 class PostRepositoryImpl @Inject constructor(private val profileRepository: ProfileRepository): PostRepository {
-    override fun getAll(): List<BaseMessage> =
+    override fun getAll(): List<PostMessage> =
         listOf(
             PostMessage(
                 0, "${profileRepository.getProfile().firstName} ${profileRepository.getProfile().lastName}",
@@ -78,7 +77,7 @@ class PostRepositoryImpl @Inject constructor(private val profileRepository: Prof
         )
 
 
-    override fun getPost(id: Long): BaseMessage {
+    override fun getPost(id: Long): PostMessage {
         TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
     }
 }

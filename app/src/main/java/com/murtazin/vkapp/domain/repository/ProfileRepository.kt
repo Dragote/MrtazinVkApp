@@ -1,6 +1,6 @@
 package com.murtazin.vkapp.domain.repository
 
-import com.murtazin.vkapp.presentation.models.Profile
+import com.murtazin.vkapp.domain.entity.Profile
 
 interface ProfileRepository {
     fun getProfile(): Profile

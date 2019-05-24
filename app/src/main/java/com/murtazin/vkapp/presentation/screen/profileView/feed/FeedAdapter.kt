@@ -5,6 +5,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.murtazin.vkapp.R
+import com.murtazin.vkapp.domain.entity.PostMessage
 import com.murtazin.vkapp.presentation.common.loadImage
 import kotlinx.android.synthetic.main.item_post_message.view.*
 import java.lang.IllegalArgumentException
@@ -14,7 +15,7 @@ class FeedAdapter : RecyclerView.Adapter<RecyclerView.ViewHolder>() {
         const val POST_MESSAGE = 1
     }
 
-    private val items: MutableList<BaseMessage> = mutableListOf()
+    private val items: MutableList<PostMessage> = mutableListOf()
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RecyclerView.ViewHolder = when (viewType) {
         POST_MESSAGE -> PostMessageHolder(
@@ -40,7 +41,7 @@ class FeedAdapter : RecyclerView.Adapter<RecyclerView.ViewHolder>() {
         }
     }
 
-    fun setItems(items: List<BaseMessage>) {
+    fun setItems(items: List<PostMessage>) {
         this.items.clear()
         this.items.addAll(items)
 

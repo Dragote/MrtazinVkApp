@@ -1,7 +1,7 @@
-package com.murtazin.vkapp.presentation.screen.profileView.feed
+package com.murtazin.vkapp.domain.entity
 
 class PostMessage(
-    id: Int,
+    val id: Long,
     val profileName: String,
     val message: String,
     val image: String,
@@ -11,4 +11,4 @@ class PostMessage(
     val likes: Int,
     val date: String,
     val avatarUrl: String
-) : BaseMessage(id)
+)

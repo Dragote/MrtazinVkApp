@@ -1,7 +1,7 @@
 package com.murtazin.vkapp.data.repository
 
 import com.murtazin.vkapp.domain.repository.ProfileRepository
-import com.murtazin.vkapp.presentation.models.Profile
+import com.murtazin.vkapp.domain.entity.Profile
 import javax.inject.Inject
 
 class ProfileRepositoryImpl @Inject constructor(): ProfileRepository {
@@ -18,7 +18,7 @@ class ProfileRepositoryImpl @Inject constructor(): ProfileRepository {
         "https://pp.userapi.com/c824602/v824602809/f7624/95vngsg5onM.jpg?ava=1"
     )
 
-    override fun setProfile(profile:Profile) {
+    override fun setProfile(profile: Profile) {
 
     }
 
