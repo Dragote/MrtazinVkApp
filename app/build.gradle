@@ -54,6 +54,10 @@ dependencies {
     implementation 'com.google.dagger:dagger-android-support:2.22.1' // if you use the support libraries
     kapt 'com.google.dagger:dagger-android-processor:2.22.1'
 
+    implementation 'com.squareup.retrofit2:retrofit:2.5.0'
+    implementation 'com.squareup.retrofit2:converter-gson:2.5.0'
+    implementation 'com.squareup.retrofit2:adapter-rxjava2:2.5.0'
+
     implementation 'de.hdodenhof:circleimageview:3.0.0'
 
 }

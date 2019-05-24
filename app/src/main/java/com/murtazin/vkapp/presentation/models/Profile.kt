@@ -1,7 +1,7 @@
 package com.murtazin.vkapp.presentation.models
 
 class Profile (
-    id: Int,
+    val id: Long,
     val firstName: String,
     val lastName: String,
     val status: String,
