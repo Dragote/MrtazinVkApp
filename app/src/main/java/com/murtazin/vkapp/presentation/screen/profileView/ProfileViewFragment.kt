@@ -7,7 +7,7 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import com.arellomobile.mvp.presenter.InjectPresenter
 import com.arellomobile.mvp.presenter.ProvidePresenter
 import com.murtazin.vkapp.R
-import com.murtazin.vkapp.domain.entity.PostEntity
+import com.murtazin.vkapp.presentation.model.Post
 import com.murtazin.vkapp.presentation.common.BaseFragment
 import com.murtazin.vkapp.presentation.common.loadImage
 import com.murtazin.vkapp.presentation.model.Profile
@@ -41,7 +41,7 @@ class ProfileViewFragment : BaseFragment(R.layout.fragment_profile_view),
         profileViewFeed.adapter = feedAdapter
     }
 
-    override fun showFeed(items: List<PostEntity>) {
+    override fun showFeed(items: List<Post>) {
         feedAdapter.setItems(items)
     }
 
