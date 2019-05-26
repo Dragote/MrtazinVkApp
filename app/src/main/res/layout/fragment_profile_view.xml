@@ -100,18 +100,6 @@
                 <LinearLayout style="@style/profileView_infoLinearLayout">
 
                     <TextView style="@style/profileView_infoSecondaryText"
-                              android:text="@string/profile_sex"
-                              android:id="@+id/profileView_sexLabel"/>
-
-                    <TextView style="@style/profileView_infoPrimaryText"
-                              android:id="@+id/profileView_sex"/>
-                    <View style="@style/grayLine"/>
-
-                </LinearLayout>
-
-                <LinearLayout style="@style/profileView_infoLinearLayout">
-
-                    <TextView style="@style/profileView_infoSecondaryText"
                               android:text="@string/profile_city"
                               android:id="@+id/profileView_cityLabel"/>
 
@@ -124,27 +112,16 @@
                 <LinearLayout style="@style/profileView_infoLinearLayout">
 
                     <TextView style="@style/profileView_infoSecondaryText"
-                              android:text="@string/profile_country"
-                              android:id="@+id/profileView_countryLabel"/>
+                              android:text="@string/profile_phone"
+                              android:id="@+id/profileView_phoneLabel"/>
 
                     <TextView style="@style/profileView_infoPrimaryText"
-                              android:id="@+id/profileView_country"/>
+                              android:id="@+id/profileView_phone"/>
                     <View style="@style/grayLine"/>
 
                 </LinearLayout>
 
-                <LinearLayout style="@style/profileView_infoLinearLayout">
 
-                    <TextView style="@style/profileView_infoSecondaryText"
-                              android:text="@string/profile_education"
-                              android:id="@+id/profileView_educationLabel"/>
-
-                    <TextView style="@style/profileView_infoPrimaryText"
-                              android:id="@+id/profileView_education"
-                              android:layout_marginBottom="8dp"/>
-
-
-                </LinearLayout>
 
                 <View style="@style/grayLine" android:layout_marginBottom="2dp"/>
                 <View style="@style/grayLine"/>

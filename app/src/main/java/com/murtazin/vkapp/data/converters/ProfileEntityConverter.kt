@@ -12,10 +12,8 @@ class ProfileEntityConverter @Inject constructor(): DataConverter<ProfileRespons
         t.lastName,
         t.status,
         t.birthday,
-        t.sex,
         t.city,
-        t.country,
-        t.education,
+        t.phone,
         t.avatarUrl
     )
 
@@ -25,10 +23,8 @@ class ProfileEntityConverter @Inject constructor(): DataConverter<ProfileRespons
         k.lastName,
         k.status,
         k.birthday,
-        k.sex,
         k.city,
-        k.country,
-        k.education,
+        k.phone,
         k.avatarUrl
     )
 }

@@ -8,10 +8,8 @@ class ProfileResponse(
     @SerializedName("lastName") val lastName: String,
     @SerializedName("status") val status: String,
     @SerializedName("birthday") val birthday: String,
-    @SerializedName("sex") val sex: String,
     @SerializedName("city") val city: String,
-    @SerializedName("country") val country: String,
-    @SerializedName("education") val education: String,
+    @SerializedName("phone") val phone: String,
     @SerializedName("avatarUrl") val avatarUrl: String
 
 )

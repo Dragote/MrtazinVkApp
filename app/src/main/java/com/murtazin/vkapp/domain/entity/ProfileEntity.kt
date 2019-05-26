@@ -6,9 +6,7 @@ class ProfileEntity (
     val lastName: String,
     val status: String,
     val birthday: String,
-    val sex: String,
     val city: String,
-    val country: String,
-    val education: String,
+    val phone: String,
     val avatarUrl: String
 )

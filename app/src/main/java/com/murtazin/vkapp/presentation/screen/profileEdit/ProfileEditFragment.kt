@@ -33,10 +33,8 @@ class ProfileEditFragment : BaseFragment(R.layout.fragment_profile_edit),
         profileEdit_lastNameEdit.text = profile.lastName.toEditable()
         profileEdit_statusEdit.text = profile.status.toEditable()
         profileEdit_birthdayEdit.text = profile.birthday.toEditable()
-        profileEdit_sexEdit.text = profile.sex.toEditable()
         profileEdit_cityEdit.text = profile.city.toEditable()
-        profileEdit_countyEdit.text = profile.country.toEditable()
-        profileEdit_educationEdit.text = profile.education.toEditable()
+        profileEdit_phoneEdit.text = profile.phone.toEditable()
     }
 
     private fun initToolBar() {

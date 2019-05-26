@@ -80,16 +80,6 @@
 
             </LinearLayout>
 
-            <LinearLayout style="@style/profileView_infoLinearLayout"
-                          android:layout_marginBottom="0dp">
-                <TextView style="@style/profileView_infoSecondaryText"
-                          android:text="@string/profile_sex"
-                          android:id="@+id/profileView_sexLabel"/>
-                <EditText android:id="@+id/profileEdit_sexEdit"
-                          android:layout_width="match_parent"
-                          android:layout_height="wrap_content"/>
-
-            </LinearLayout>
 
             <LinearLayout style="@style/profileView_infoLinearLayout"
                           android:layout_marginBottom="0dp">
@@ -107,21 +97,9 @@
                           android:layout_marginBottom="0dp">
 
                 <TextView style="@style/profileView_infoSecondaryText"
-                          android:text="@string/profile_country"
-                          android:id="@+id/profileView_countryLabel"/>
-                <EditText android:id="@+id/profileEdit_countyEdit"
-                          android:layout_width="match_parent"
-                          android:layout_height="wrap_content"/>
-
-            </LinearLayout>
-
-            <LinearLayout style="@style/profileView_infoLinearLayout"
-                          android:layout_marginBottom="0dp">
-
-                <TextView style="@style/profileView_infoSecondaryText"
-                          android:text="@string/profile_education"
-                          android:id="@+id/profileView_educationLabel"/>
-                <EditText android:id="@+id/profileEdit_educationEdit"
+                          android:text="@string/profile_phone"
+                          android:id="@+id/profileView_phoneLabel"/>
+                <EditText android:id="@+id/profileEdit_phoneEdit"
                           android:layout_width="match_parent"
                           android:layout_height="wrap_content"/>
             </LinearLayout>

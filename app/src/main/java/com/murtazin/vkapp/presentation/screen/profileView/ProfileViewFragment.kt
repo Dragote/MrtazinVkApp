@@ -50,10 +50,8 @@ class ProfileViewFragment : BaseFragment(R.layout.fragment_profile_view),
         profileView_name.text = "${profile.firstName} ${profile.lastName}"
         profileView_status.text = profile.status
         profileView_birthday.text = profile.birthday
-        profileView_sex.text = profile.sex
         profileView_city.text = profile.city
-        profileView_country.text = profile.country
-        profileView_education.text = profile.education
+        profileView_phone.text = profile.phone
         profileView_avatar.loadImage(profile.avatarUrl)
     }
 

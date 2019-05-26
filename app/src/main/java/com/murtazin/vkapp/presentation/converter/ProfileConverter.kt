@@ -13,10 +13,8 @@ class ProfileConverter @Inject constructor() : Converter<ProfileEntity, Profile>
                 t.lastName,
                 t.status,
                 t.birthday,
-                t.sex,
                 t.city,
-                t.country,
-                t.education,
+                t.phone,
                 t.avatarUrl
             )
 

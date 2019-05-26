@@ -21,10 +21,8 @@ class ProfileEditPresenter @Inject constructor(private val router: Router,
             "Муртазин",
             "Vallar Morghulis",
             "14.07.98",
-            "Мужской",
             "Томск",
-            "Россия",
-            "ТПУ Инженерная школа информационных технологий и робототехники (бывш. Институт кибернетики)",
+            "89138117651",
             "https://vk.com/images/camera_200.png?ava=1?ava=1"
         ))
     }
