@@ -1,6 +1,6 @@
 package com.murtazin.vkapp.domain.entity
 
-class Profile (
+class ProfileEntity (
     val id: Long,
     val firstName: String,
     val lastName: String,

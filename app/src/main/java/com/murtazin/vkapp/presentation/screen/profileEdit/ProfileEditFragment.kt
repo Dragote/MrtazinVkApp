@@ -9,7 +9,7 @@ import com.murtazin.vkapp.R
 import com.murtazin.vkapp.presentation.common.BaseFragment
 import com.google.android.material.snackbar.Snackbar
 import com.murtazin.vkapp.presentation.extensions.toEditable
-import com.murtazin.vkapp.domain.entity.Profile
+import com.murtazin.vkapp.presentation.model.Profile
 import kotlinx.android.synthetic.main.fragment_profile_edit.*
 import javax.inject.Inject
 

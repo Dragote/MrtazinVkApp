@@ -5,7 +5,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.murtazin.vkapp.R
-import com.murtazin.vkapp.domain.entity.PostMessage
+import com.murtazin.vkapp.domain.entity.PostEntity
 import com.murtazin.vkapp.presentation.common.loadImage
 import kotlinx.android.synthetic.main.item_post_message.view.*
 import java.lang.IllegalArgumentException
@@ -15,7 +15,7 @@ class FeedAdapter : RecyclerView.Adapter<RecyclerView.ViewHolder>() {
         const val POST_MESSAGE = 1
     }
 
-    private val items: MutableList<PostMessage> = mutableListOf()
+    private val items: MutableList<PostEntity> = mutableListOf()
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RecyclerView.ViewHolder = when (viewType) {
         POST_MESSAGE -> PostMessageHolder(
@@ -29,7 +29,7 @@ class FeedAdapter : RecyclerView.Adapter<RecyclerView.ViewHolder>() {
     }
 
     override fun getItemViewType(position: Int): Int = when (items[position]) {
-        is PostMessage -> POST_MESSAGE
+        is PostEntity -> POST_MESSAGE
         else -> throw IllegalArgumentException("${items[position].javaClass} not found")
     }
 
@@ -37,11 +37,11 @@ class FeedAdapter : RecyclerView.Adapter<RecyclerView.ViewHolder>() {
 
     override fun onBindViewHolder(holder: RecyclerView.ViewHolder, position: Int) {
         when (holder) {
-            is PostMessageHolder -> holder.bind(items[position] as PostMessage)
+            is PostMessageHolder -> holder.bind(items[position] as PostEntity)
         }
     }
 
-    fun setItems(items: List<PostMessage>) {
+    fun setItems(items: List<PostEntity>) {
         this.items.clear()
         this.items.addAll(items)
 
@@ -49,7 +49,7 @@ class FeedAdapter : RecyclerView.Adapter<RecyclerView.ViewHolder>() {
     }
 
     inner class PostMessageHolder(view: View) : RecyclerView.ViewHolder(view) {
-        fun bind(data: PostMessage) {
+        fun bind(data: PostEntity) {
             itemView.profile_image.loadImage(data.avatarUrl)
             itemView.item_profileName.text = data.profileName
             itemView.item_postDate.text = data.date

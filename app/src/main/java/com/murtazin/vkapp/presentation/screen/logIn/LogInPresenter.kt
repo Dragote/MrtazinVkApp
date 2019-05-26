@@ -16,11 +16,11 @@ class LogInPresenter @Inject constructor(
 
     override fun onFirstViewAttach() {
         super.onFirstViewAttach()
-        viewState.initLogInScreen("default login", "default password")
+        viewState.initLogInScreen()
     }
 
     fun logIn(email: String, password: String) {
-        sessionRepository
+       /* sessionRepository
             .login(email, password)
             .observeOn(AndroidSchedulers.mainThread())
             .subscribe(
@@ -30,8 +30,8 @@ class LogInPresenter @Inject constructor(
                 {
                     viewState.showLogInError()
                 }
-            ).untilDestroy()
-
+            ).untilDestroy()*/
+        router.newRootScreen(Screen.ProfileViewScreen())
     }
 
 }

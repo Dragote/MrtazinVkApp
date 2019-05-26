@@ -26,7 +26,7 @@ class LogInFragment : BaseFragment(R.layout.fragment_log_in),
         initLogInScreen()
     }
 
-    private fun initLogInScreen() {
+    override fun initLogInScreen() {
         logIn_logInBtn.setOnClickListener {
             val email = logIn_loginEdit.text.toString()
             val password = logIn_passwordEdit.text.toString()
@@ -35,10 +35,6 @@ class LogInFragment : BaseFragment(R.layout.fragment_log_in),
         }
     }
 
-    override fun initLogInScreen(login: String, password: String) {
-        logIn_loginEdit.text = login.toEditable()
-        logIn_passwordEdit.text = password.toEditable()
-    }
 
     override fun showLogInError() {
         TODO("not implemented") //To change body of created functions use File | Settings | File Templates.

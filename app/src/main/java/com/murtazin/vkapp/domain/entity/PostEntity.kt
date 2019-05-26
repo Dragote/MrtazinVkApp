@@ -1,6 +1,6 @@
 package com.murtazin.vkapp.domain.entity
 
-class PostMessage(
+class PostEntity(
     val id: Long,
     val profileName: String,
     val message: String,
