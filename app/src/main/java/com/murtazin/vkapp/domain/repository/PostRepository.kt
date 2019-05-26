@@ -1,11 +1,10 @@
 package com.murtazin.vkapp.domain.repository
 
-import com.murtazin.vkapp.domain.entity.PostMessage
-import io.reactivex.Single
+import com.murtazin.vkapp.domain.entity.PostEntity
 
 interface PostRepository {
 
-    fun getAll(): List<PostMessage>
+    fun getAll(): List<PostEntity>
 
-    fun getPost(id: Long): PostMessage
+    fun getPost(id: Long): PostEntity
 }

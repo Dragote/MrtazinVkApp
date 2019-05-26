@@ -1,6 +1,6 @@
 package com.murtazin.vkapp.data.converters
 
-interface Converter<T, K> {
+interface DataConverter<T, K> {
 
     fun convertTo(t: T): K
 

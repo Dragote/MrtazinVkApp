@@ -2,14 +2,15 @@ package com.murtazin.vkapp.data.repository
 
 import com.murtazin.vkapp.domain.repository.PostRepository
 import com.murtazin.vkapp.domain.repository.ProfileRepository
-import com.murtazin.vkapp.domain.entity.PostMessage
+import com.murtazin.vkapp.domain.entity.PostEntity
 import javax.inject.Inject
 
 class PostRepositoryImpl @Inject constructor(private val profileRepository: ProfileRepository): PostRepository {
-    override fun getAll(): List<PostMessage> =
+    override fun getAll(): List<PostEntity> =
         listOf(
-            PostMessage(
-                0, "${profileRepository.getProfile().firstName} ${profileRepository.getProfile().lastName}",
+            PostEntity(
+                0,
+                "Эмиль Муртазин",
                 "It's just only message post",
                 "",
                 "",
@@ -17,10 +18,11 @@ class PostRepositoryImpl @Inject constructor(private val profileRepository: Prof
                 "",
                 43,
                 "14 август 2018",
-                "https://pp.userapi.com/c824602/v824602809/f7624/95vngsg5onM.jpg?ava=1"
+                "https://vk.com/images/camera_200.png?ava=1?ava=1"
             ),
-            PostMessage(
-                1, "${profileRepository.getProfile().firstName} ${profileRepository.getProfile().lastName}",
+            PostEntity(
+                1,
+                "Эмиль Муртазин",
                 "",
                 "https://picsum.photos/id/153/200/300",
                 "",
@@ -28,21 +30,23 @@ class PostRepositoryImpl @Inject constructor(private val profileRepository: Prof
                 "",
                 21,
                 "14 август 2018",
-                "https://pp.userapi.com/c824602/v824602809/f7624/95vngsg5onM.jpg?ava=1"
+                "https://vk.com/images/camera_200.png?ava=1?ava=1"
             ),
-            PostMessage(
-                2, "${profileRepository.getProfile().firstName} ${profileRepository.getProfile().lastName}",
-                "Music Post",
+            PostEntity(
+                2,
+                "Эмиль Муртазин",
+                "Music PostEntity",
                 "",
                 "",
                 "In cold blood",
                 "Alt-J",
                 13,
                 "14 август 2018",
-                "https://pp.userapi.com/c824602/v824602809/f7624/95vngsg5onM.jpg?ava=1"
+                "https://vk.com/images/camera_200.png?ava=1?ava=1"
             ),
-            PostMessage(
-                3, "${profileRepository.getProfile().firstName} ${profileRepository.getProfile().lastName}",
+            PostEntity(
+                3,
+                "Эмиль Муртазин",
                 "Picture and music post",
                 "https://picsum.photos/id/167/200/300",
                 "",
@@ -50,10 +54,11 @@ class PostRepositoryImpl @Inject constructor(private val profileRepository: Prof
                 "Alt-J",
                 96,
                 "14 август 2018",
-                "https://pp.userapi.com/c824602/v824602809/f7624/95vngsg5onM.jpg?ava=1"
+                "https://vk.com/images/camera_200.png?ava=1?ava=1"
             ),
-            PostMessage(
-                4, "${profileRepository.getProfile().firstName} ${profileRepository.getProfile().lastName}",
+            PostEntity(
+                4,
+                "Эмиль Муртазин",
                 "Video post",
                 "",
                 "Video",
@@ -61,10 +66,11 @@ class PostRepositoryImpl @Inject constructor(private val profileRepository: Prof
                 "",
                 43,
                 "14 август 2018",
-                "https://pp.userapi.com/c824602/v824602809/f7624/95vngsg5onM.jpg?ava=1"
+                "https://vk.com/images/camera_200.png?ava=1?ava=1"
             ),
-            PostMessage(
-                5, "${profileRepository.getProfile().firstName} ${profileRepository.getProfile().lastName}",
+            PostEntity(
+                5,
+                "Эмиль Муртазин",
                 "Basic message",
                 "https://picsum.photos/id/153/200/300",
                 "Video",
@@ -72,12 +78,12 @@ class PostRepositoryImpl @Inject constructor(private val profileRepository: Prof
                 "Alt-J",
                 43,
                 "14 август 2018",
-                "https://pp.userapi.com/c824602/v824602809/f7624/95vngsg5onM.jpg?ava=1"
+                "https://vk.com/images/camera_200.png?ava=1?ava=1"
             )
         )
 
 
-    override fun getPost(id: Long): PostMessage {
+    override fun getPost(id: Long): PostEntity {
         TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
     }
 }

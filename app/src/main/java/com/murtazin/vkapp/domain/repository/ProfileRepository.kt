@@ -1,8 +1,10 @@
 package com.murtazin.vkapp.domain.repository
 
-import com.murtazin.vkapp.domain.entity.Profile
+import com.murtazin.vkapp.domain.entity.ProfileEntity
+import com.murtazin.vkapp.presentation.model.Profile
+import io.reactivex.Single
 
 interface ProfileRepository {
-    fun getProfile(): Profile
-    fun setProfile(profile: Profile)
+    fun getProfile(): Single<ProfileEntity>
+    fun setProfile(profileEntity: ProfileEntity)
 }

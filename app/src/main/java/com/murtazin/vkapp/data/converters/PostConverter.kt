@@ -1,10 +1,10 @@
 package com.murtazin.vkapp.data.converters
 
 import com.murtazin.vkapp.data.response.PostResponse
-import com.murtazin.vkapp.domain.entity.PostMessage
+import com.murtazin.vkapp.domain.entity.PostEntity
 
-class PostConverter: Converter<PostResponse, PostMessage> {
-    override fun convertTo(t: PostResponse): PostMessage = PostMessage(
+class PostConverter: DataConverter<PostResponse, PostEntity> {
+    override fun convertTo(t: PostResponse): PostEntity = PostEntity(
         t.id,
         t.profileName,
         t.message,
@@ -17,7 +17,7 @@ class PostConverter: Converter<PostResponse, PostMessage> {
         t.avatarUrl
     )
 
-    override fun convertFrom(k: PostMessage): PostResponse = PostResponse(
+    override fun convertFrom(k: PostEntity): PostResponse = PostResponse(
         k.id,
         k.profileName,
         k.message,

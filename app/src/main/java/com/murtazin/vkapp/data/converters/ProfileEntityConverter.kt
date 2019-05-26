@@ -1,12 +1,12 @@
 package com.murtazin.vkapp.data.converters
 
 import com.murtazin.vkapp.data.response.ProfileResponse
-import com.murtazin.vkapp.domain.entity.Profile
+import com.murtazin.vkapp.domain.entity.ProfileEntity
 import javax.inject.Inject
 
-class ProfileConverter @Inject constructor(): Converter<ProfileResponse, Profile> {
+class ProfileEntityConverter @Inject constructor(): DataConverter<ProfileResponse, ProfileEntity> {
 
-    override fun convertTo(t: ProfileResponse): Profile = Profile(
+    override fun convertTo(t: ProfileResponse): ProfileEntity = ProfileEntity(
         t.id,
         t.firstName,
         t.lastName,
@@ -19,7 +19,7 @@ class ProfileConverter @Inject constructor(): Converter<ProfileResponse, Profile
         t.avatarUrl
     )
 
-    override fun convertFrom(k: Profile): ProfileResponse = ProfileResponse(
+    override fun convertFrom(k: ProfileEntity): ProfileResponse = ProfileResponse(
         k.id,
         k.firstName,
         k.lastName,
