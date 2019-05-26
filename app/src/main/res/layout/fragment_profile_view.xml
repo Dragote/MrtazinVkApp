@@ -117,7 +117,6 @@
 
                     <TextView style="@style/profileView_infoPrimaryText"
                               android:id="@+id/profileView_phone"/>
-                    <View style="@style/grayLine"/>
 
                 </LinearLayout>
 
