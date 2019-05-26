@@ -1,10 +1,10 @@
 package com.murtazin.vkapp.domain.repository
 
-import com.murtazin.vkapp.domain.entity.PostEntity
+import com.murtazin.vkapp.presentation.model.Post
 
 interface PostRepository {
 
-    fun getAll(): List<PostEntity>
+    fun getAll(): List<Post>
 
-    fun getPost(id: Long): PostEntity
+    fun getPost(id: Long): Post
 }
