@@ -1,4 +1,4 @@
-package com.murtazin.vkapp.dagger
+package com.murtazin.vkapp.dagger.module.data
 
 import com.murtazin.vkapp.data.converters.DataConverter
 import com.murtazin.vkapp.data.converters.ProfileEntityConverter

@@ -1,6 +1,10 @@
 package com.murtazin.vkapp.dagger
 
 import com.murtazin.vkapp.App
+import com.murtazin.vkapp.dagger.module.data.DataModule
+import com.murtazin.vkapp.dagger.module.presentation.AppModule
+import com.murtazin.vkapp.dagger.module.presentation.NavigationModule
+import com.murtazin.vkapp.dagger.module.presentation.PresentationModule
 import dagger.Component
 import dagger.android.AndroidInjector
 import dagger.android.support.AndroidSupportInjectionModule
@@ -10,8 +14,7 @@ import javax.inject.Singleton
 @Component(
     modules = [
         AndroidSupportInjectionModule::class,
-        AppModule::class,
-        NavigationModule::class,
+        PresentationModule::class,
         DataModule::class
     ]
 )

@@ -1,4 +1,4 @@
-package com.murtazin.vkapp.dagger
+package com.murtazin.vkapp.dagger.module.presentation
 
 import dagger.Module
 import dagger.Provides

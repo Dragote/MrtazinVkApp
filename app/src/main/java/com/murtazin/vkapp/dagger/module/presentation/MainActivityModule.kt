@@ -1,5 +1,6 @@
-package com.murtazin.vkapp.dagger
+package com.murtazin.vkapp.dagger.module.presentation
 
+import com.murtazin.vkapp.dagger.FragmentScope
 import com.murtazin.vkapp.presentation.screen.logIn.LogInFragment
 import com.murtazin.vkapp.presentation.screen.profileEdit.ProfileEditFragment
 import com.murtazin.vkapp.presentation.screen.profileView.ProfileViewFragment
@@ -8,7 +9,7 @@ import dagger.Module
 import dagger.android.ContributesAndroidInjector
 
 @Module
-interface MainActivityModules {
+interface MainActivityModule {
 
     @FragmentScope
     @ContributesAndroidInjector

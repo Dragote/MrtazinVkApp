@@ -1,4 +1,4 @@
-package com.murtazin.vkapp.dagger
+package com.murtazin.vkapp.dagger.module.data
 
 import com.murtazin.vkapp.domain.repository.PostRepository
 import com.murtazin.vkapp.data.repository.PostRepositoryImpl

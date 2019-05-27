@@ -1,4 +1,4 @@
-package com.murtazin.vkapp.dagger
+package com.murtazin.vkapp.dagger.module.data
 
 import com.murtazin.vkapp.data.network.Api
 import dagger.Module
