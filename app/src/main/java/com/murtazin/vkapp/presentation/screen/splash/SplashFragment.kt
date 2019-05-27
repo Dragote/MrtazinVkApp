@@ -9,11 +9,17 @@ import javax.inject.Inject
 class SplashFragment : BaseFragment(R.layout.fragment_splash),
     SplashView {
 
+    companion object {
+        fun createInstance() = SplashFragment()
+    }
+
     @Inject
     @InjectPresenter
     lateinit var presenter: SplashPresenter
 
     @ProvidePresenter
     fun providePresenter(): SplashPresenter = presenter
+
+
 
 }

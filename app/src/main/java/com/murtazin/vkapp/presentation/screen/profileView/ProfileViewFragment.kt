@@ -18,6 +18,10 @@ import javax.inject.Inject
 class ProfileViewFragment : BaseFragment(R.layout.fragment_profile_view),
     ProfileView {
 
+    companion object {
+        fun createInstance() = ProfileViewFragment()
+    }
+
     @Inject
     @InjectPresenter
     lateinit var presenter: ProfileViewPresenter

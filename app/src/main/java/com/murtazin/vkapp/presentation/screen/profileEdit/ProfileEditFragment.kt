@@ -16,6 +16,10 @@ import javax.inject.Inject
 class ProfileEditFragment : BaseFragment(R.layout.fragment_profile_edit),
     ProfileEdit {
 
+    companion object {
+        fun createInstance() = ProfileEditFragment()
+}
+
     @Inject
     @InjectPresenter
     lateinit var presenter: ProfileEditPresenter

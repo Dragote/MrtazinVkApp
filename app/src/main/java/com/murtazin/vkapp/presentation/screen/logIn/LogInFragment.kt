@@ -14,6 +14,10 @@ import javax.inject.Inject
 class LogInFragment : BaseFragment(R.layout.fragment_log_in),
     LogIn {
 
+    companion object {
+        fun createInstance() = LogInFragment()
+    }
+
     @Inject
     @InjectPresenter
     lateinit var presenter: LogInPresenter

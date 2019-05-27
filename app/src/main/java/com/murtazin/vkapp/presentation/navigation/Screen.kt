@@ -8,10 +8,10 @@ import com.murtazin.vkapp.presentation.screen.splash.SplashFragment
 import ru.terrakok.cicerone.android.support.SupportAppScreen
 
 sealed class Screen(fragment: Fragment) : BaseScreen(fragment) {
-    class ProfileViewScreen : Screen(ProfileViewFragment())
-    class ProfileEditScreen : Screen(ProfileEditFragment())
-    class LogInScreen : Screen(LogInFragment())
-    class SplashScreen : Screen(SplashFragment())
+    class ProfileViewScreen : Screen(ProfileViewFragment.createInstance())
+    class ProfileEditScreen : Screen(ProfileEditFragment.createInstance())
+    class LogInScreen : Screen(LogInFragment.createInstance())
+    class SplashScreen : Screen(SplashFragment.createInstance())
 
 }
 

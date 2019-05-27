@@ -15,20 +15,13 @@ class FeedAdapter : RecyclerView.Adapter<RecyclerView.ViewHolder>() {
     private val items: MutableList<Post> = mutableListOf()
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RecyclerView.ViewHolder =
-        PostMessageHolder(
-            LayoutInflater.from(parent.context).inflate(
-                R.layout.item_wall,
-                parent,
-                false
-            )
-        )
-
+        PostHolder.createInstance(parent)
 
     override fun getItemCount(): Int = items.size
 
     override fun onBindViewHolder(holder: RecyclerView.ViewHolder, position: Int) {
         when (holder) {
-            is PostMessageHolder -> holder.bind(items[position])
+            is PostHolder -> holder.bind(items[position])
         }
     }
 

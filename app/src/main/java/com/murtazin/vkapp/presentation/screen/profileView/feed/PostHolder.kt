@@ -1,15 +1,27 @@
 package com.murtazin.vkapp.presentation.screen.profileView.feed
 
+import android.view.LayoutInflater
 import android.view.View
+import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
+import com.murtazin.vkapp.R
 import com.murtazin.vkapp.presentation.common.loadImage
 import com.murtazin.vkapp.presentation.model.Audio
 import com.murtazin.vkapp.presentation.model.Content
 import com.murtazin.vkapp.presentation.model.Post
 import kotlinx.android.synthetic.main.item_wall.view.*
 
-class PostMessageHolder(view: View) : RecyclerView.ViewHolder(view) {
+class PostHolder(view: View) : RecyclerView.ViewHolder(view) {
 
+    companion object {
+        fun createInstance(parent: ViewGroup) = PostHolder(
+            LayoutInflater.from(parent.context).inflate(
+                R.layout.item_wall,
+                parent,
+                false
+            )
+        )
+    }
 
     fun bind(data: Post) {
 
