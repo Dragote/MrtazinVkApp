@@ -9,6 +9,7 @@ import com.murtazin.vkapp.presentation.common.loadImage
 import com.murtazin.vkapp.presentation.model.Audio
 import com.murtazin.vkapp.presentation.model.Content
 import com.murtazin.vkapp.presentation.model.Post
+import com.murtazin.vkapp.presentation.model.Video
 import kotlinx.android.synthetic.main.item_wall.view.*
 
 class PostHolder(view: View) : RecyclerView.ViewHolder(view) {
@@ -51,6 +52,7 @@ class PostHolder(view: View) : RecyclerView.ViewHolder(view) {
                     itemView.item_musicAudioName.text = it.songName
                 }
                 Content.VIDEO -> {
+                    it as Video
                     itemView.itemPostVideo.visibility = View.VISIBLE
                 }
 

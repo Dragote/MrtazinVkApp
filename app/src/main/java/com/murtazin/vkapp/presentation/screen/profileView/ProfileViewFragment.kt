@@ -19,6 +19,7 @@ class ProfileViewFragment : BaseFragment(R.layout.fragment_profile_view),
     ProfileView {
 
     companion object {
+
         fun createInstance() = ProfileViewFragment()
     }
 
@@ -29,7 +30,7 @@ class ProfileViewFragment : BaseFragment(R.layout.fragment_profile_view),
     @ProvidePresenter
     fun providePresenter(): ProfileViewPresenter = presenter
 
-    private val feedAdapter = FeedAdapter()
+    private val feedAdapter = FeedAdapter {presenter.loadPosts()}
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
@@ -37,10 +38,10 @@ class ProfileViewFragment : BaseFragment(R.layout.fragment_profile_view),
         initBtns()
         initFeed()
 
+        profileRefreshLayout.setOnRefreshListener(presenter::refreshPosts)
     }
 
     private fun initFeed() {
-        profileViewFeed.isNestedScrollingEnabled = false
         profileViewFeed.layoutManager = LinearLayoutManager(context)
         profileViewFeed.adapter = feedAdapter
     }
@@ -77,6 +78,14 @@ class ProfileViewFragment : BaseFragment(R.layout.fragment_profile_view),
 
     override fun showNetworkError() {
         TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
+    }
+
+    override fun showProgress() {
+        profileRefreshLayout.isRefreshing = true
+    }
+
+    override fun hideProgress() {
+        profileRefreshLayout.isRefreshing = false
     }
 
 }

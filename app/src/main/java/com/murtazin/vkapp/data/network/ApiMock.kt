@@ -27,10 +27,10 @@ class ApiMock @Inject constructor() : Api {
 
     override fun getPosts(profileId: Long, page: Int): Single<PostsResponse> =
         Single.just(
-            PostsResponse(
+            PostsResponse((1L..5L).map {
                 listOf(
                     Post(
-                        0,
+                        it,
                         "Эмиль Муртазин",
                         "It's just only message post",
                         listOf(
@@ -45,7 +45,7 @@ class ApiMock @Inject constructor() : Api {
                         "https://pp.userapi.com/c824602/v824602809/f7624/95vngsg5onM.jpg"
                     ),
                     Post(
-                        0,
+                        it,
                         "Эмиль Муртазин",
                         "It's just only message post",
                         listOf(
@@ -62,7 +62,7 @@ class ApiMock @Inject constructor() : Api {
                         "https://pp.userapi.com/c824602/v824602809/f7624/95vngsg5onM.jpg"
                     )
                 )
-            )
+            }.flatten())
         ).delay(2, TimeUnit.SECONDS)
 
 
