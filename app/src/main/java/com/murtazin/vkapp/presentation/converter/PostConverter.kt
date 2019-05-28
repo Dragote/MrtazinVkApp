@@ -5,36 +5,40 @@ import com.murtazin.vkapp.presentation.model.*
 import java.lang.Exception
 import javax.inject.Inject
 
-class PostConverter @Inject constructor() : Converter<PostEntity, Post> {
+class PostConverter @Inject constructor() :
+    Converter<@JvmSuppressWildcards List<@JvmSuppressWildcards PostEntity>, @JvmSuppressWildcards List<@JvmSuppressWildcards Post>> {
 
-    override fun convert(t: PostEntity): Post = Post(
-        t.id,
-        t.profileName,
-        t.message,
-        t.content.map {
-           when(it){
-               is PostEntity.Audio -> Audio(
-                   it.type,
-                   it.url,
-                   it.author,
-                   it.songName
-               )
-               is PostEntity.Video -> Video(
-                   it.type,
-                   it.url
-               )
-               is PostEntity.Photo -> Photo(
-                   it.type,
-                   it.url
-               )
-               else -> Content(
-                   it.type,
-                   it.url
-               )
-           }
-        },
-        t.likes,
-        t.date,
-        t.avatarUrl
-    )
+    override fun convert(t: List<PostEntity>): List<Post> = t.map {
+        Post(
+            it.id,
+            it.profileName,
+            it.message,
+            it.content.map {content ->
+                when (content) {
+                    is PostEntity.Audio -> Audio(
+                       content.type,
+                        content.url,
+                        content.author,
+                        content.songName
+                    )
+                    is PostEntity.Video -> Video(
+                        content.type,
+                        content.url
+                    )
+                    is PostEntity.Photo -> Photo(
+                        content.type,
+                        content.url
+                    )
+                    else -> Content(
+                        content.type,
+                        content.url
+                    )
+                }
+            },
+            it.likes,
+            it.date,
+            it.avatarUrl
+        )
+    }
+
 }
