@@ -6,7 +6,6 @@ import io.reactivex.Single
 
 interface PostRepository {
 
-    fun getAll(): Single<List<PostEntity>>
+    fun getPosts(page: Int): Single<List<PostEntity>>
 
-    fun getPost(id: Long): Post
 }

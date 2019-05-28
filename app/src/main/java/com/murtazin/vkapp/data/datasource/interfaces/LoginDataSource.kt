@@ -5,7 +5,7 @@ import io.reactivex.Single
 
 interface LoginDataSource {
 
-    fun login(name:String,password: String): Single<ProfileResponse>
+    fun login(phone:String,password: String): Single<ProfileResponse>
 
 }
 

@@ -15,13 +15,10 @@ class PostRepositoryImpl @Inject constructor(
     private val postsConverter: DataConverter<PostsResponse, List<PostEntity>>
 ): PostRepository {
 
-    override fun getAll(): Single<List<PostEntity>> =
-        postDataSource.getPosts(123456789,1)
+    override fun getPosts(page:Int): Single<List<PostEntity>> =
+        postDataSource.getPosts(140798,page)
             .subscribeOn(Schedulers.io())
             .map(postsConverter::convert)
 
 
-    override fun getPost(id: Long): Post {
-        TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
-    }
 }

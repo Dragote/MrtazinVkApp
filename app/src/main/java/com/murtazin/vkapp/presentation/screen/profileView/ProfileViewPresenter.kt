@@ -30,8 +30,12 @@ class ProfileViewPresenter @Inject constructor(
         super.onFirstViewAttach()
 
         getProfile()
+        getPosts()
 
-       postRepository.getAll()
+    }
+
+    private fun getPosts(){
+        postRepository.getPosts(1)
             .observeOn(AndroidSchedulers.mainThread())
             .subscribe({
                 viewState.showFeed(postConverter.convert(it))
@@ -41,7 +45,6 @@ class ProfileViewPresenter @Inject constructor(
             .untilDestroy()
 
     }
-
     private fun getProfile() {
         profileRepository.getProfile()
             .observeOn(AndroidSchedulers.mainThread())
