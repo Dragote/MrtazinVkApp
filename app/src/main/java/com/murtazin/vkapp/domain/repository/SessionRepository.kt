@@ -7,5 +7,5 @@ interface SessionRepository {
 
     fun isAuth(): Boolean
 
-    fun login(email:String, password: String): Single<ProfileEntity>
+    fun login(phone: String, password: String): Single<ProfileEntity>
 }

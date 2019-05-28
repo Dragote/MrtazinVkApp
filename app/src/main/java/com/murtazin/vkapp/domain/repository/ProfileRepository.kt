@@ -6,5 +6,4 @@ import io.reactivex.Single
 
 interface ProfileRepository {
     fun getProfile(): Single<ProfileEntity>
-    fun setProfile(profileEntity: ProfileEntity)
 }
