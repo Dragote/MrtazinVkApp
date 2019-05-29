@@ -21,7 +21,7 @@ class LogInPresenter @Inject constructor(
 
     fun logIn(phone: String, password: String) {
         sessionRepository
-            .login("89138117651","password")
+            .login(phone, password)
             .observeOn(AndroidSchedulers.mainThread())
             .subscribe(
                 {

@@ -9,7 +9,6 @@ import com.arellomobile.mvp.presenter.ProvidePresenter
 import com.murtazin.vkapp.R
 import com.murtazin.vkapp.presentation.model.Post
 import com.murtazin.vkapp.presentation.common.BaseFragment
-import com.murtazin.vkapp.presentation.common.loadImage
 import com.murtazin.vkapp.presentation.model.Profile
 import com.murtazin.vkapp.presentation.screen.profileView.feed.FeedAdapter
 import kotlinx.android.synthetic.main.fragment_profile_view.*
@@ -30,41 +29,33 @@ class ProfileViewFragment : BaseFragment(R.layout.fragment_profile_view),
     @ProvidePresenter
     fun providePresenter(): ProfileViewPresenter = presenter
 
-    private val feedAdapter = FeedAdapter {presenter.loadPosts()}
+    private val feedAdapter = FeedAdapter ({ presenter.loadPosts()},{presenter.edit()})
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         initToolbar()
-        initBtns()
         initFeed()
-
         profileRefreshLayout.setOnRefreshListener(presenter::refreshPosts)
     }
 
     private fun initFeed() {
+        profileViewFeed.isNestedScrollingEnabled = false
         profileViewFeed.layoutManager = LinearLayoutManager(context)
         profileViewFeed.adapter = feedAdapter
     }
 
     override fun showFeed(items: List<Post>) {
-        feedAdapter.setItems(items)
+        feedAdapter.setPosts(items)
     }
 
     @SuppressLint("SetTextI18n")
     override fun showProfile(profile: Profile) {
-        profileView_name.text = "${profile.firstName} ${profile.lastName}"
-        profileView_status.text = profile.status
-        profileView_birthday.text = profile.birthday
-        profileView_city.text = profile.city
-        profileView_phone.text = profile.phone
-        profileView_avatar.loadImage(profile.avatarUrl)
+        feedAdapter.setProfile(profile){
+            profileViewFeed.smoothScrollToPosition(0)
+        }
+
     }
 
-    private fun initBtns() {
-        profileView_editProfileBtn.setOnClickListener {
-            presenter.edit()
-        }
-    }
 
     private fun initToolbar() {
         profileViewToolbar.inflateMenu(R.menu.menu_profile_view)
@@ -81,11 +72,12 @@ class ProfileViewFragment : BaseFragment(R.layout.fragment_profile_view),
     }
 
     override fun showProgress() {
-        profileRefreshLayout.isRefreshing = true
+        profileProgressBar.visibility = View.VISIBLE
     }
 
     override fun hideProgress() {
         profileRefreshLayout.isRefreshing = false
+        profileProgressBar.visibility = View.GONE
     }
 
 }

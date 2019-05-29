@@ -1,7 +1,7 @@
 package com.murtazin.vkapp.presentation.model
 
 class Profile (
-    val id: Long,
+    id: Long,
     val firstName: String,
     val lastName: String,
     val status: String,
@@ -9,4 +9,4 @@ class Profile (
     val city: String,
     val phone: String,
     val avatarUrl: String
-)
+): Item(id)

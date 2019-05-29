@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:orientation="vertical"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent">
+
+    <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="300dp">
+
+        <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="300dp"
+                android:scaleType="centerCrop"
+                android:id="@+id/profileView_avatar"
+                android:contentDescription="@string/avatar"/>
+
+        <LinearLayout android:layout_width="match_parent"
+                      android:layout_height="wrap_content"
+                      android:orientation="vertical"
+                      android:layout_alignParentBottom="true"
+                      android:paddingBottom="8dp"
+                      android:paddingStart="8dp"
+                      android:paddingEnd="8dp">
+            <LinearLayout
+                    android:orientation="horizontal"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+                <TextView
+                        android:id="@+id/profileView_name"
+                        android:layout_width="wrap_content"
+                        android:textColor="@color/white"
+                        android:textSize="24sp"
+                        android:layout_height="wrap_content"/>
+
+            </LinearLayout>
+            <TextView
+                    android:id="@+id/profileView_status"
+                    android:layout_width="wrap_content"
+                    android:textColor="@color/white"
+                    android:textStyle="italic"
+                    android:textSize="15sp"
+                    android:layout_height="wrap_content"
+            />
+        </LinearLayout>
+
+    </RelativeLayout>
+    <LinearLayout style="@style/profileView_infoLinearLayout"
+                  android:paddingEnd="8dp"
+                  android:paddingStart="8dp">
+
+        <Button style="@style/defaultBtn"
+                android:id="@+id/profileView_editProfileBtn"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/profile_EditProfile"/>
+
+
+        <LinearLayout style="@style/profileView_infoLinearLayout">
+
+            <TextView style="@style/profileView_infoSecondaryText"
+                      android:text="@string/profile_birthday"
+                      android:id="@+id/profileView_birthdayLabel"/>
+
+            <TextView style="@style/profileView_infoPrimaryText"
+                      android:id="@+id/profileView_birthday"/>
+            <View style="@style/grayLine"/>
+
+        </LinearLayout>
+
+        <LinearLayout style="@style/profileView_infoLinearLayout">
+
+            <TextView style="@style/profileView_infoSecondaryText"
+                      android:text="@string/profile_city"
+                      android:id="@+id/profileView_cityLabel"/>
+
+            <TextView style="@style/profileView_infoPrimaryText"
+                      android:id="@+id/profileView_city"/>
+            <View style="@style/grayLine"/>
+
+        </LinearLayout>
+
+        <LinearLayout style="@style/profileView_infoLinearLayout">
+
+            <TextView style="@style/profileView_infoSecondaryText"
+                      android:text="@string/profile_phone"
+                      android:id="@+id/profileView_phoneLabel"/>
+
+            <TextView style="@style/profileView_infoPrimaryText"
+                      android:id="@+id/profileView_phone"/>
+
+        </LinearLayout>
+
+
+        <View style="@style/grayLine" android:layout_marginBottom="2dp"/>
+        <View style="@style/grayLine"/>
+
+        <LinearLayout android:layout_width="wrap_content"
+                      android:layout_height="match_parent"
+                      android:orientation="vertical"
+                      android:layout_marginTop="8dp"
+                      android:layout_marginBottom="8dp">
+
+            <TextView
+                    android:text="@string/profile_feed"
+                    android:textSize="18sp"
+                    android:textAlignment="center"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:textColor="@color/colorAccent"
+                    android:id="@+id/profileView_feed"/>
+
+            <View android:layout_width="match_parent"
+                  android:layout_height="2dp"
+                  android:background="@color/colorAccent"/>
+        </LinearLayout>
+
+
+    </LinearLayout>
+
+</LinearLayout>

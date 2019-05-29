@@ -10,14 +10,14 @@ import com.murtazin.vkapp.presentation.model.Audio
 import com.murtazin.vkapp.presentation.model.Content
 import com.murtazin.vkapp.presentation.model.Post
 import com.murtazin.vkapp.presentation.model.Video
-import kotlinx.android.synthetic.main.item_wall.view.*
+import kotlinx.android.synthetic.main.item_feed.view.*
 
 class PostHolder(view: View) : RecyclerView.ViewHolder(view) {
 
     companion object {
         fun createInstance(parent: ViewGroup) = PostHolder(
             LayoutInflater.from(parent.context).inflate(
-                R.layout.item_wall,
+                R.layout.item_feed,
                 parent,
                 false
             )
