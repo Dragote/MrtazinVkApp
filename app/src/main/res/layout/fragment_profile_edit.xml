@@ -39,6 +39,8 @@
 
                 <EditText
                         android:id="@+id/profileEdit_firstNameEdit"
+                        android:inputType="textPersonName"
+                        android:maxLength="20"
                         android:layout_width="match_parent"
                           android:layout_height="wrap_content"/>
 
@@ -49,10 +51,12 @@
 
                 <TextView style="@style/profileView_infoSecondaryText"
                           android:text="@string/profile_lastName"
+                          android:inputType="textPersonName"
                           android:id="@+id/profileEdit_lastNameLabel"/>
 
                 <EditText android:id="@+id/profileEdit_lastNameEdit"
                           android:layout_width="match_parent"
+                          android:maxLength="20"
                           android:layout_height="wrap_content"/>
             </LinearLayout>
 
@@ -61,6 +65,7 @@
 
                 <TextView style="@style/profileView_infoSecondaryText"
                           android:text="@string/profile_status"
+                          android:inputType="text"
                           android:id="@+id/profileEdit_statusLabel"/>
                 <EditText android:id="@+id/profileEdit_statusEdit"
                           android:layout_width="match_parent"
@@ -75,6 +80,7 @@
                           android:id="@+id/profileView_birthdayLabel"/>
                 <EditText android:id="@+id/profileEdit_birthdayEdit"
                           android:inputType="date"
+                          android:maxLength="10"
                           android:layout_width="match_parent"
                           android:layout_height="wrap_content"/>
 
@@ -89,6 +95,8 @@
                           android:id="@+id/profileView_cityLabel"/>
                 <EditText android:id="@+id/profileEdit_cityEdit"
                           android:layout_width="match_parent"
+                          android:maxLength="20"
+                          android:inputType="textPersonName"
                           android:layout_height="wrap_content"/>
 
             </LinearLayout>
@@ -101,6 +109,8 @@
                           android:id="@+id/profileView_phoneLabel"/>
                 <EditText android:id="@+id/profileEdit_phoneEdit"
                           android:layout_width="match_parent"
+                          android:inputType="phone"
+                          android:maxLength="11"
                           android:layout_height="wrap_content"/>
             </LinearLayout>
         </LinearLayout>
