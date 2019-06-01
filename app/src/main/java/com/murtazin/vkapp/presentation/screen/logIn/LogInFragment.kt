@@ -3,10 +3,12 @@ package com.murtazin.vkapp.presentation.screen.logIn
 import android.os.Bundle
 import android.view.View
 import android.view.inputmethod.EditorInfo
+import androidx.appcompat.app.AlertDialog
 import com.arellomobile.mvp.presenter.InjectPresenter
 import com.arellomobile.mvp.presenter.ProvidePresenter
 import com.murtazin.vkapp.R
 import com.murtazin.vkapp.presentation.common.BaseFragment
+import com.murtazin.vkapp.presentation.extensions.showAlertOkDialog
 import com.murtazin.vkapp.presentation.extensions.toEditable
 import kotlinx.android.synthetic.main.fragment_log_in.*
 import javax.inject.Inject
@@ -41,13 +43,20 @@ class LogInFragment : BaseFragment(R.layout.fragment_log_in),
 
 
     override fun showLogInError() {
-        TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
+          logIn_logInBtn.showAlertOkDialog(getString(R.string.error),getString(R.string.error_login_message))
     }
 
     override fun showNetworkError() {
         TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
     }
 
+    override fun showProgress() {
+
+    }
+
+    override fun hideProgress() {
+
+    }
 }
 
 

@@ -5,7 +5,7 @@
     <string name="profile_edit">Edit Profile</string>
     <string name="logout">Logout</string>
     <string name="spaceString">\u0020</string>
-    <string name="logIn_login">Login</string>
+    <string name="logIn_phone">Phone</string>
     <string name="logIn_password">Password</string>
     <string name="logIn_logInBtn">Log In</string>
     <string name="profile_EditProfile">Edit Profile</string>
@@ -21,4 +21,8 @@
     <string name="save_done">Saved Successfully</string>
     <string name="avatar">Avatar</string>
     <string name="profile_phone">Phone</string>
+    <string name="error">Error</string>
+    <string name="error_login_message">Incorrect number and/or password!</string>
+    <string name="ok">OK</string>
+
 </resources>

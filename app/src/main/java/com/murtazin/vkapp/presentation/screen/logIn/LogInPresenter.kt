@@ -7,6 +7,7 @@ import com.murtazin.vkapp.presentation.common.BasePresenter
 import com.murtazin.vkapp.presentation.navigation.Screen
 import io.reactivex.android.schedulers.AndroidSchedulers
 import ru.terrakok.cicerone.Router
+import java.util.concurrent.TimeUnit
 import javax.inject.Inject
 
 @InjectViewState
@@ -20,6 +21,7 @@ class LogInPresenter @Inject constructor(
     }
 
     fun logIn(phone: String, password: String) {
+        viewState.showProgress()
         sessionRepository
             .login(phone, password)
             .observeOn(AndroidSchedulers.mainThread())

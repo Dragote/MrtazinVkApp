@@ -9,4 +9,6 @@ interface LogIn : MvpView {
     fun initLogInScreen()
     fun showLogInError()
     fun showNetworkError()
+    fun showProgress()
+    fun hideProgress()
 }

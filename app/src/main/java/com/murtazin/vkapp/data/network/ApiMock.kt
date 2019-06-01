@@ -9,7 +9,7 @@ class ApiMock @Inject constructor() : Api {
 
 
     override fun login(phone: String, password: String): Single<ProfileResponse> =
-        if (phone == "89138117651" && password == "password") {
+        if (phone == "88005553535" && password == "password") {
             val profile =  ProfileResponse(
                 48392502,
                 "Эмиль",
@@ -19,6 +19,7 @@ class ApiMock @Inject constructor() : Api {
                 "Томск",
                 "89138117651",
                 "https://pp.userapi.com/c824602/v824602809/f7624/95vngsg5onM.jpg")
+
             Single.just(profile)
         } else {
             Single.error(RuntimeException("User not found"))
@@ -36,7 +37,7 @@ class ApiMock @Inject constructor() : Api {
                         listOf(
                             Photo(
                                 "photo",
-                                "https://vk.com/images/camera_200.png?ava=1?ava=1"
+                                "https://static-eu.insales.ru/images/products/1/6056/125573032/znak-po-lestnitse-vniz-napravo.png"
                             )
 
                         ),
@@ -54,10 +55,14 @@ class ApiMock @Inject constructor() : Api {
                                 "",
                                 "Alt-J",
                                 "In clod blood"
+                            ),
+                            Photo(
+                                "photo",
+                                "https://static-eu.insales.ru/images/products/1/6273/125573249/znak-po-lestnitse-vniz-nalevo.png"
                             )
 
                         ),
-                        25,
+                        17,
                         "14.07.2019",
                         "https://pp.userapi.com/c824602/v824602809/f7624/95vngsg5onM.jpg"
                     )
@@ -69,7 +74,7 @@ class ApiMock @Inject constructor() : Api {
     override fun getProfile(userId: Long): Single<ProfileResponse> =
         Single.just(
             ProfileResponse(
-                48392502,
+               48392502,
                 "Эмиль",
                 "Муртазин",
                 "Vallar Morghulis",
@@ -79,7 +84,7 @@ class ApiMock @Inject constructor() : Api {
                 "https://pp.userapi.com/c824602/v824602809/f7624/95vngsg5onM.jpg"
             )
         )
-            .delay(2, TimeUnit.SECONDS)
+            .delay(1, TimeUnit.SECONDS)
 
 
 }
